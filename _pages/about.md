@@ -14,21 +14,21 @@ PROFESSIONAL ORGANIZATIONS AND HONORARY SOCIETIES
 ======
 1. IEEE P3155, Title: Programmable Quantum Simulator Working Group.
 2. IEEE P2668, Title: Standard for Maturity Index of Internet-of-things: Evaluation, Grading, and Ranking.
-3. IEEE Young Professional Member
-4. IEEE Robotics and Automation Member
-5. IEEE Industrial Electronics Member
-6. IEEE Power and Energy Member
-7. IEEE Biometrics Council.
-8. IEEE Nanotechnology Council.
-9. IEEE Sensors Council.
-10. IEEE Systems Council.
+3. IEEE Standard Association. 
+4. IEEE Young Professional Society. 
+5. IEEE Robotics and Automation Society.
+6. IEEE Industrial Electronics Society.
+7. IEEE Power and Energy Society.
+8. IEEE Computer Society.
+9. IEEE Biometrics Council.
+10. IEEE Nanotechnology Council.
+11. IEEE Sensors Council.
+12. IEEE Systems Council.
 
 
 Research
 ------
-The Internet of Things has a constantly expanding sensor node population, which causes sensory terminals to create a lot of data. Frequent data exchange between the processing units and sensors results in severe
-
-performance restrictions on the system's speed, security, and energy efficiency. A unique computation paradigm that can incorporate computer capabilities into sensor networks needs be created in order to effectively handle a significant volume of sensory input. 
+The Internet of Things has a constantly expanding sensor node population, which causes sensory terminals to create a lot of data. Frequent data exchange between the processing units and sensors results in severe performance restrictions on the system's speed, security, and energy efficiency. A unique computation paradigm that can incorporate computer capabilities into sensor networks needs be created in order to effectively handle a significant volume of sensory input. 
 
 By combining previously independent components like sensors, memory, and computing units, devices are getting more compact. As a prominent example, the switch from conventional sensory vision computing to in-sensor vision computing has shown a number of advantages, including less data redundancy, simpler circuitry, and reduced power usage.
 ![Editing a markdown file for a talk](/images/editing-talk.png)
