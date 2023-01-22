@@ -80,15 +80,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
+  name             : "Saifaldeen Saad ALAKDHIM"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
-  employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  bio              : "I AM A PHD STUDENT AT STATE KEY LABORATORY OF ELECTRICAL INSULATION AND POWER EQUIPMENT, IEMIT,XI’AN JIAOTONG UNIVERSITY,XI’AN,710049, P. R. CHINA. PREVIOUSLY, I WAS AN ASSISTANT LECTURER AT THE DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING, AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY / ENGINEERING TECHNICAL COLLEGE"
+  location         : "Xian,Shaanxi,China; Budapest,Hungary"
+  employer         : "MoE"
+  pubmed           : "https://pubmed.ncbi.nlm.nih.gov/?term=cnc+iot&ac=no"
+  googlescholar    : "https://scholar.google.com/citations?user=Nhw1sGgAAAAJ&hl"
   email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     :  # example: "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
   uri              :
   bitbucket        :
   codepen          :
@@ -103,7 +103,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "http://orcid.org/0000-0002-2082-9591"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
