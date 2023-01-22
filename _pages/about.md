@@ -12,19 +12,13 @@ I AM A PHD STUDENT AT STATE KEY LABORATORY OF ELECTRICAL INSULATION AND POWER EQ
 
 PROFESSIONAL ORGANIZATIONS POSITION
 ======
-Vice Chair WG: IEEE P2418.11 at IEEE Standards Association
-
-Content Writer of Marketing & Communication Subcommittee at IEEE PES Young Professionals
-
-Best Ambassador at IEEE PES Day 2022
-
-Ambassador at IEEE PES Day 2022
-
-Member of the Board of Directors / Babylon branch at Cultural businessmen Club
-
-Vice director of Babylon directory at IOPHR Ukraine-Iraq
-
-Division Head at Research and Development Division at Babylon Federal Governor's Office.
+1. Vice Chair WG: IEEE P2418.11 at IEEE Standards Association
+2. Content Writer of Marketing & Communication Subcommittee at IEEE PES Young Professionals
+3. Best Ambassador at IEEE PES Day 2022
+4. Ambassador at IEEE PES Day 2022
+5. Member of the Board of Directors / Babylon branch at Cultural businessmen Club
+6. Vice director of Babylon directory at IOPHR Ukraine-Iraq
+7. Division Head at Research and Development Division at Babylon Federal Governor's Office.
 
 
 PROFESSIONAL ORGANIZATIONS AND HONORARY SOCIETIES
