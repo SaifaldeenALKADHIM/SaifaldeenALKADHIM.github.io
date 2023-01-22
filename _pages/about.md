@@ -12,16 +12,16 @@ I AM A PHD STUDENT AT STATE KEY LABORATORY OF ELECTRICAL INSULATION AND POWER EQ
 
 PROFESSIONAL ORGANIZATIONS AND HONORARY SOCIETIES
 ======
-IEEE P3155, Title: Programmable Quantum Simulator Working Group.
-IEEE P2668, Title: Standard for Maturity Index of Internet-of-things: Evaluation, Grading, and Ranking.
-IEEE Young Professional Member
-IEEE Robotics and Automation Member
-IEEE Industrial Electronics Member
-IEEE Power and Energy Member
-IEEE Biometrics Council.
-IEEE Nanotechnology Council.
-IEEE Sensors Council.
-IEEE Systems Council.
+1. IEEE P3155, Title: Programmable Quantum Simulator Working Group.
+2. IEEE P2668, Title: Standard for Maturity Index of Internet-of-things: Evaluation, Grading, and Ranking.
+3. IEEE Young Professional Member
+4. IEEE Robotics and Automation Member
+5. IEEE Industrial Electronics Member
+6. IEEE Power and Energy Member
+7. IEEE Biometrics Council.
+8. IEEE Nanotechnology Council.
+9. IEEE Sensors Council.
+10. IEEE Systems Council.
 
 
 Research
