@@ -61,22 +61,49 @@ Skills
 
 Publications
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+ -	Al-Kadhim, S., 2017. Industrial Workshop Based on Internet of Things: Automated Manufacturing Systems Technology. 1st ed. Germany: Noor Publishing, ISBN- 3330965754, 9783330965751.
+-	Saif Aldeen Saad Obayes, "Application of Computer Numerical Control Machine Based on Internet of Things System", M.SC. Thesis, University of Technology, 2017.
+-	Saif Aldeen Saad Obayes et al., "CNC Machine Based on Embedded Wireless and IoT for Workshop Development", Proceedings of IEEE-2017 International Conference on Control, Automation and Diagnosis (ICCAD'17), IEEE-RAS Meeting, Tunis, January 2017.
+-	Saif Aldeen Saad Obayes et al., "Prototype Wireless Controller System for Engraving Machine", Proceedings of UKSim-AMSS  19th International Conference on Modelling & Simulation, Cambridge, UK, April 2017.
+-	R2i-2017 Innovation Workshop, The Research to Industry (R2i) Workshop– 18th May 2017 Stokes Building, Dublin City University, Glasnevin, Dublin 9, Ireland.
+-	Saif Aldeen Saad Obayes Al-Kadhim, Ibtesam R. K. Al-Saedi, and Basil Jabir Shanshool, " Microstrip Grid Antenna Array for 5G Mobile Devices," Journal of Communications, vol. 13, no. 5, pp. 225-229, 2018. Doi: 10.12720/jcm.13.5. 225-229.
+-	2nd World Conference on Smart Trends in System, Security, Security  & Sustainability, held during October 30 - 31, 2018 at Hotel Holiday Inn- Regent's Park, London, UK., contributed a paper titled: Industrial Cloud Monitoring System based on Internet of Things. IEEE Xplore Digital library Index in Scopus & EI.
+-	Saif Aldeen Saad Obayes, "IoT Management Solution: A Case Study of Fill Level Monitoring for Gravel Silos". IOP Journal of Physics (Online ISSN: 1742-6596, Print ISSN: 1742-6588, SCOPUS Indexed).
   
-Talks
+Continuing Education:
 ======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
+-Innovation in the Government:  MOHAMMED BIN RASHID CENTRE FOR GOVERNMENT INNOVATION | Edraak.
+-Effective Thinking Through Mathematics course: The University of Texas at Austin, edX.
+-Database & SQL:  UrukTech Electronics© during September- November 2017.
+-Simulating a Medical Device Interaction with a Biological System.: IEEE professional development hours (PDHs) and continuing education
+-STEAM: Integrating Education with Life.: American University in Cairo | Edraak.
+-Discrete-Time Signals and Systems: Rice University.
+-Project Management: Shiite Endowment Diwan.
+-Electrical Substation Maintenance: Iraqi Engineer Union.
+-Conductors and insulators: Electricity Company- Middle Region.
+-Electronic Interfaces: Bridging the Physical and Digital Worlds: University of California, Berkeley.
+-2021-06 Certificate of Recognition 2021 Xi'an Jiaotong University Alliance of the Silk Road Summer Camp
+-2021-05 IKCEST Training Programme — UASR Virtual Summer Courses 2021 themed on Progress on energy and carbon nexus influenced by chemical engineering.
+-2021-04 IKCEST Training Programme — UASR Virtual Summer Courses 2021 themed on Frontiers in Materials Research.
+-2021-07 IKCEST Training Programme — UASR Virtual Summer Courses 2021 themed on State-of-the-Art Sensor and Actuator Technology.
+-2021-08 IKCEST Training Programme — UASR Virtual Summer Courses 2021 themed on Towards a Carbon Neutrality Future by Understanding Thermal Fluid Flow in Energy and Power Engineering.
+-2021-01 90Th IKCEST Training Program for Silk Road Engineering Science and Technology Development.
+-2021-01 Excellent Student in XJTU Winter Camp of the Silk Road Cloud catches the Times, Innovation drives the future" from Jan. 25th to Jan. 31st, 2021.
   
 Teaching
 ======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+-Wave Propagation.
+-Numerical and Engineering Analysis.
+-Electrical Machine.
+-Industrial Electronics.
+-Measurement Techniques.
+-Computer-Aided Design and Manufacturing.
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+# EXTRACURRICULAR ACTIVITIES
+-Global Peace Ambassador – Iraq.
+-International Organization for Human Rights Protection, IOHRP in Ukrain – Iraq.
+-Member of the Board of Directors / Babylon branch at Cultural Businessmen Club.
+-Section Ambassador for IEEE PES DAY 2022.
+-Best Ambassador for IEEE PES DAY 2022.
+-Section Ambassador for IEEE DAY 2022.
+-Content Writer for IEEE PES Young Professionals Marketing and Communications Subcommittee 2022.
