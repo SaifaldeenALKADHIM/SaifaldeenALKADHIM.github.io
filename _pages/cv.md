@@ -11,9 +11,11 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+| University of Technology |                                                          Middle Technical University |University of Babylon |
+| :------------------------: |                                                     :-------------------------------: |  :-------------------------------: | 
+| Baghdad, Iraq                                              |                                      Baghdad, Iraq | Babylon, Iraq |
+| ElectroMechanical Systems Engineering                      |                           Power System Engineering | Electrical Engineering |
+| Master of Science in Electromechanical Systems Engineering |  Higher Diploma Degree in Power System Engineering | Bachelor of Science in Electrical Engineering |
 
 Work experience
 ======
