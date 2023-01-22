@@ -11,11 +11,11 @@ redirect_from:
 
 Education
 ======
-| University of Technology |                                                          Middle Technical University |University of Babylon |
-| :------------------------: |                                                     :-------------------------------: |  :-------------------------------: | 
-| Baghdad, Iraq                                              |                                      Baghdad, Iraq | Babylon, Iraq |
-| ElectroMechanical Systems Engineering                      |                           Power System Engineering | Electrical Engineering |
-| Master of Science in Electromechanical Systems Engineering |  Higher Diploma Degree in Power System Engineering | Bachelor of Science in Electrical Engineering |
+* 2025	Ph.D. Student, Electrical Engineering 09/2021 - 07/2025, Xi'an Jiaotong University, Shaanxi, China
+* 2017	MSEE, Electrical Engineering 09/2015 - 06/2017, University of Technology, Iraq
+* 2011	Higher Diploma Degree in Power System Engineering 09/2009 – 12/2010, MIDDLE TECHNICAL UNIVERSITY, Iraq
+* 2006	BSEE, Electrical Engineering 09/2002 - 07/2006, University of Babylon, Iraq
+
 
 Work experience
 ======
