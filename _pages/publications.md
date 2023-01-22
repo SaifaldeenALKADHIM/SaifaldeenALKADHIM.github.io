@@ -5,15 +5,6 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
-
-{% include base_path %}
-
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
 * Saif Aldeen Saad Obayes, “Application of Computer Numerical Control Machine Based on Internet of Things System”, M.SC. Thesis, University of Technology, 2017.
 * Saif Aldeen Saad Obayes et al., “CNC Machine Based on Embedded Wireless and IoT for Workshop Development”, Proceedings of IEEE-2017 International Conference on Control, Automation and Diagnosis (ICCAD’17), IEEE-RAS Meeting, Tunis, January, 2017.
 * Saif Aldeen Saad Obayes et al., “Prototype Wireless Controller System for Engraving Machine”, Proceedings of UKSim-AMSS 19th International Conference on Modelling & Simulation, Cambridge, UK, April, 2017.
