@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Saifaldeen Saad ALAKDHIM"
-  avatar           : "profile.jpg"
+  avatar           : "profile.png"
   bio              : "I AM A PHD STUDENT AT STATE KEY LABORATORY OF ELECTRICAL INSULATION AND POWER EQUIPMENT, IEMIT,XI’AN JIAOTONG UNIVERSITY,XI’AN,710049, P. R. CHINA. PREVIOUSLY, I WAS AN ASSISTANT LECTURER AT THE DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING, AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY / ENGINEERING TECHNICAL COLLEGE"
   location         : "Xian,Shaanxi,China; Budapest,Hungary"
   employer         : "MoE"
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "https://twitter.com/saifoony"
+  twitter          : "saifoony"
   vine             :
   weibo            :
   xing             :
