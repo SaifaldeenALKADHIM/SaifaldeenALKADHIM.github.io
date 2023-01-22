@@ -40,7 +40,7 @@ Work experience
 
 Skills
 ======
--       Crash Course on Python , Google Career Certificates: T948S7NA2X4Z.
+-       Crash Course on Python , Google Career Certificates, T948S7NA2X4Z.
 -	edX Honor Code Certificate for Discrete Time Signals and Systems – edX.
 -	edX Honor Code Certificate for Electronic Interfaces – edX.
 -	SQL Fundamentals course , Sololearn, Certificate #1060-5141721.
