@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : https://twitter.com/saifoony
+  username               : 
 facebook:
   username               :
   app_id                 :
@@ -88,7 +88,7 @@ author:
   pubmed           : "https://pubmed.ncbi.nlm.nih.gov/?term=cnc+iot&ac=no"
   googlescholar    : "https://scholar.google.com/citations?user=Nhw1sGgAAAAJ&hl"
   email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
+  researchgate     :  "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
   uri              :
   bitbucket        :
   codepen          :
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "SaifaldeenALKADHIM"
   google_plus      :
   keybase          :
   instagram        :
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : "https://twitter.com/saifoony"
   vine             :
   weibo            :
   xing             :
