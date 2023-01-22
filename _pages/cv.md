@@ -40,25 +40,25 @@ Work experience
 
 Skills
 ======
--       Crash Course on Python - Google Career Certificates: T948S7NA2X4Z.
+-       Crash Course on Python , Google Career Certificates: T948S7NA2X4Z.
 -	edX Honor Code Certificate for Discrete Time Signals and Systems – edX.
 -	edX Honor Code Certificate for Electronic Interfaces – edX.
--	SQL Fundamentals course – Sololearn, Certificate #1060-5141721.
--	Data Modeling for Database – Udemy, UC-OLIOR5YC.
--	Simulating a Medical Device Interaction with a Biological System – IEEE Educational Activities Certificates, 0003849
+-	SQL Fundamentals course , Sololearn, Certificate #1060-5141721.
+-	Data Modeling for Database , Udemy, UC-OLIOR5YC.
+-	Simulating a Medical Device Interaction with a Biological System , IEEE Educational Activities Certificates, 0003849
 -	The Industrial Internet of Things (IIoT) 2018, Part Two: The role of connectivity in collaborative projects, CFE Media and Technology Continuing Education, Exam: 1 Certified Professional DRCEP provider number 144272.
--	Reviewing in the Sciences - Web of Science Academy - clarivate.com E-602DN0.
--	Google Project Management: Specialization - Coursera | Google 3BZ4EDRTR7FW.
--	Sensors and Sensor Circuit Design - University of Colorado Boulder ZFUXH4LJ7YR4.
--	Project Initiation: Starting a Successful Project - Coursera | Google.
+-	Reviewing in the Sciences , Web of Science Academy , clarivate.com E-602DN0.
+-	Google Project Management: Specialization - Coursera , Google 3BZ4EDRTR7FW.
+-	Sensors and Sensor Circuit Design , University of Colorado Boulder ZFUXH4LJ7YR4.
+-	Project Initiation: Starting a Successful Project - Coursera , Google.
 	8B7SJNTAUXAM
--	Principles of Load Forecasting in Google Sheets – Coursera 3LUNEMB9MYE9.
--	Agile Project Management - Coursera | Google FPRNMWSV4VWE
--	Applying Project Management in the Real World - Coursera | Google UYRDDMRARY26.
+-	Principles of Load Forecasting in Google Sheets , Coursera 3LUNEMB9MYE9.
+-	Agile Project Management , Coursera , Google FPRNMWSV4VWE
+-	Applying Project Management in the Real World , Coursera , Google UYRDDMRARY26.
 -	Crash Course on Python - Google Career Certificates T948S7NA2X4Z.
-- 	أساسیات الدعم الفني - Google Career Certificates UZRXSZX39NVB.
--	Project Planning: Putting It All Together - Coursera | Google EU225AKG9EEB.
--	Use WordPress to Create a Blog for your Business - Coursera Course Certificates BMAB3XA3EZHR.
+- 	أساسیات الدعم الفني, Google Career Certificates UZRXSZX39NVB.
+-	Project Planning: Putting It All Together , Coursera , Google EU225AKG9EEB.
+-	Use WordPress to Create a Blog for your Business , Coursera Course Certificates BMAB3XA3EZHR.
 
 Publications
 ======
@@ -73,21 +73,21 @@ Publications
   
 Continuing Education:
 ======
-* Innovation in the Government:  MOHAMMED BIN RASHID CENTRE FOR GOVERNMENT INNOVATION | Edraak.
+* Innovation in the Government:  MOHAMMED BIN RASHID CENTRE FOR GOVERNMENT INNOVATION , Edraak.
 * Effective Thinking Through Mathematics course: The University of Texas at Austin, edX.
 * Database & SQL:  UrukTech Electronics© during September- November 2017.
 * Simulating a Medical Device Interaction with a Biological System.: IEEE professional development hours (PDHs) and continuing education
-* STEAM: Integrating Education with Life.: American University in Cairo | Edraak.
+* STEAM: Integrating Education with Life, American University in Cairo , Edraak.
 * Discrete-Time Signals and Systems: Rice University.
 * Project Management: Shiite Endowment Diwan.
 * Electrical Substation Maintenance: Iraqi Engineer Union.
 * Conductors and insulators: Electricity Company- Middle Region.
 * Electronic Interfaces: Bridging the Physical and Digital Worlds: University of California, Berkeley.
 * 2021-06 Certificate of Recognition 2021 Xi'an Jiaotong University Alliance of the Silk Road Summer Camp
-* 2021-05 IKCEST Training Programme — UASR Virtual Summer Courses 2021 themed on Progress on energy and carbon nexus influenced by chemical engineering.
-* 2021-04 IKCEST Training Programme — UASR Virtual Summer Courses 2021 themed on Frontiers in Materials Research.
-* 2021-07 IKCEST Training Programme — UASR Virtual Summer Courses 2021 themed on State-of-the-Art Sensor and Actuator Technology.
-* 2021-08 IKCEST Training Programme — UASR Virtual Summer Courses 2021 themed on Towards a Carbon Neutrality Future by Understanding Thermal Fluid Flow in Energy and Power Engineering.
+* 2021-05 IKCEST Training Programme , UASR Virtual Summer Courses 2021 themed on Progress on energy and carbon nexus influenced by chemical engineering.
+* 2021-04 IKCEST Training Programme , UASR Virtual Summer Courses 2021 themed on Frontiers in Materials Research.
+* 2021-07 IKCEST Training Programme , UASR Virtual Summer Courses 2021 themed on State-of-the-Art Sensor and Actuator Technology.
+* 2021-08 IKCEST Training Programme , UASR Virtual Summer Courses 2021 themed on Towards a Carbon Neutrality Future by Understanding Thermal Fluid Flow in Energy and Power Engineering.
 * 2021-01 90Th IKCEST Training Program for Silk Road Engineering Science and Technology Development.
 * 2021-01 Excellent Student in XJTU Winter Camp of the Silk Road Cloud catches the Times, Innovation drives the future" from Jan. 25th to Jan. 31st, 2021.
   
