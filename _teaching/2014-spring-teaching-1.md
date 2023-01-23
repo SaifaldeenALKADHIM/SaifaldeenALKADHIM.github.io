@@ -11,17 +11,17 @@ location: "Najaf, Iraq"
 Course Objectives
 ======
 The student will learn and understand
-1- Fundamental antenna parameters and numerical methods to analyze and differentiate the antennas.
-2- Concept of radiation mechanism of various antennas.
-3- Mechanism and models for radio-wave propagation.
+1. Fundamental antenna parameters and numerical methods to analyze and differentiate the antennas.
+2. Concept of radiation mechanism of various antennas.
+3. Mechanism and models for radio-wave propagation.
 
 Course Outcomes
 ======
 On completion of this course, the students will be able to
-1-Identify basic antenna parameters.
-2-Design and analyze antenna arrays.
-3-Design and analyze wire and aperture antennas.
-4-Identify the characteristics of radio-wave propagation.
+1. Identify basic antenna parameters.
+2. Design and analyze antenna arrays.
+3. Design and analyze wire and aperture antennas.
+4. Identify the characteristics of radio-wave propagation.
 
 Catalog Description
 ======
@@ -29,10 +29,10 @@ Antenna and Wave Propagation is to introduce to the students the basics of radia
 
 Text Book
 ======
-J.D.Krauss, “Antenna for all Applications”, TMH, 3rd Edition, 2010, ISBN 0-89006-513-6.
-C.A.Balanis, “Antenna Theory – Analysis and Design”, Third Edition, John Wiley & Sons, 2010. ISBN 0-471-66782-X
+* J.D.Krauss, “Antenna for all Applications”, TMH, 3rd Edition, 2010, ISBN 0-89006-513-6.
+* C.A.Balanis, “Antenna Theory – Analysis and Design”, Third Edition, John Wiley & Sons, 2010. ISBN 0-471-66782-X
 
 Reference Books
 ======
-R.S.Elliot, “Antenna Theory and Design”, IEEE Press, John Wiley, 2005, ISBN-13 978-0-470-01741-8, 3rd edition.
-K.D.Prasad, “Antennas and Radiating Systems”, Satyaprakasan
+* R.S.Elliot, “Antenna Theory and Design”, IEEE Press, John Wiley, 2005, ISBN-13 978-0-470-01741-8, 3rd edition.
+* K.D.Prasad, “Antennas and Radiating Systems”, Satyaprakasan
