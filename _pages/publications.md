@@ -12,21 +12,17 @@ author_profile: true
 * Saif Aldeen Saad Obayes Al-Kadhim, Ibtesam R. K. Al-Saedi, and Basil Jabir Shanshool, " Microstrip Grid Antenna Array for 5G Mobile Devices," Journal of Communications, vol. 13, no. 5, pp. 225-229, 2018. Doi: 10.12720/jcm.13.5. 225-229.
 * 2nd World Conference on Smart Trends in System, Security, Security & Sustainability, held during October 30 - 31, 2018 at Hotel Holiday Inn- Regent's Park, London, UK. contributed a paper titled: Industrial Cloud Monitoring System based on Internet of Things. IEEE Xplore Digital library Index in Scopus & EI.
 * Saif Aldeen Saad Obayes, "IoT Management Solution: A Case Study of Fill Level Monitoring for Gravel Silos". accepted and will be proceeded to publication in the IOP Journal of Physics (Online ISSN: 1742-6596, Print ISSN: 1742-6588, SCOPUS Indexed).
-•	Prototype Wireless Controller System based on Raspberry Pi and Arduino for Engraving Machine, SOS Aldeen, IRK Al-Saedi, FM Mahel, Computer Modelling & Simulation (UKSim), 2017 UKSim-AMSS 19th International .
-•	CNC machine based on embedded wireless and Internet of Things for workshop development, IRK Al-Saedi, FM Mohammed, SASO AL-Kadhim, International Journal of Computing and Digital Systems (IJCDS) 6 (4), 205-2012
-•	CNC machine based on embedded wireless and Internet of Things for workshop development, IRK Al-Saedi, FM Mohammed, SS Obayes, 2017 International Conference on Control, Automation and Diagnosis (ICCAD …
-•	Microstrip grid antenna array for 5g mobile devices, SASO Al-Kadhim, IRK Al-Saedi, BJ Shanshool, Journal of Communications 13 (5), 225-229
-•	Simulation of Multi-Machine Transient Stability, SASO Al-Kadhim, College of Electrical and Electronics Techniques, Middle Technical University.
-•	Application of Computer Numerical Control Machine Based on Internet of Things System, SAS Alkadhim, Available at SSRN 3329570
-•	Analog Speech Scrambling by Using Wavelet Transform, SAS Obayes, Diss. University of Babylon
-•	Industrial Cloud Monitoring System Based on Internet of Things, IRK Al-Saedi, SASO Al-Kadhim, 2018 Second World Conference on Smart Trends in Systems, Security and …
-•	Communicating with Raspberry Pi via MAVLink, SAS Alkadhim, Available at SSRN 3318130
-•	Hot Air Oven for Sterilization: Definition & Working Principle, SAS Alkadhim, Available at SSRN 3340325
-•	An Overview of Electronic Scalar (January 15, 2019), SAS Alkadhim, Available at SSRN 3340333
-•	LIGHT SENSOR TO SWITCH ON A LIGHT OR ANY DEVICE LDR, SASO Al-Kadhim, SK Aboud, Tequneical report
-•	Three-phase Induction Motor: Types and Structure, SAS Alkadhim, Available at SSRN 3647425
-•	Three phase Transformer: Connection and Configuration, SAS Alkadhim, Available at SSRN 3647143
-•	Light Sensor to Switch On a Light or Any Device, SAS Alkadhim, SK Aboud, Available at SSRN 3318154
-•	MEMS Energy Harvesting For Iot Application, SAS Alkadhim, MSO Alkadhim, Available at SSRN 4245922
-•	IoT Management Solution: A Case Study of Fill Level Monitoring for Gravel Silos, SASO Al-Kadhim, IRK Al-Saedi, Journal of Physics: Conference Series 1804 (1), 012045
-•	Amplitude Modulated Signals Generation Methods, SAS Alkadhim, Available at SSRN 3648902,2020
+*	Prototype Wireless Controller System based on Raspberry Pi and Arduino for Engraving Machine, SOS Aldeen, IRK Al-Saedi, FM Mahel, Computer Modelling & Simulation (UKSim), 2017 UKSim-AMSS 19th International .
+*	CNC machine based on embedded wireless and Internet of Things for workshop development, IRK Al-Saedi, FM Mohammed, SASO AL-Kadhim, International Journal of Computing and Digital Systems (IJCDS) 6 (4), 205-2012
+*	Simulation of Multi-Machine Transient Stability, SASO Al-Kadhim, College of Electrical and Electronics Techniques, Middle Technical University.
+*	Application of Computer Numerical Control Machine Based on Internet of Things System, SAS Alkadhim, Available at SSRN 3329570
+*	Analog Speech Scrambling by Using Wavelet Transform, SAS Obayes, Diss. University of Babylon
+*	Communicating with Raspberry Pi via MAVLink, SAS Alkadhim, Available at SSRN 3318130
+*	Hot Air Oven for Sterilization: Definition & Working Principle, SAS Alkadhim, Available at SSRN 3340325
+*	An Overview of Electronic Scalar (January 15, 2019), SAS Alkadhim, Available at SSRN 3340333
+*	LIGHT SENSOR TO SWITCH ON A LIGHT OR ANY DEVICE LDR, SASO Al-Kadhim, SK Aboud, Tequneical report
+*	Three-phase Induction Motor: Types and Structure, SAS Alkadhim, Available at SSRN 3647425
+*	Three phase Transformer: Connection and Configuration, SAS Alkadhim, Available at SSRN 3647143
+*	Light Sensor to Switch On a Light or Any Device, SAS Alkadhim, SK Aboud, Available at SSRN 3318154
+*	MEMS Energy Harvesting For Iot Application, SAS Alkadhim, MSO Alkadhim, Available at SSRN 4245922
+*	Amplitude Modulated Signals Generation Methods, SAS Alkadhim, Available at SSRN 3648902,2020
