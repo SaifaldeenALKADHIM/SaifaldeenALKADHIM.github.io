@@ -1,6 +1,7 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "IEEE PES DAY 2022"
+excerpt: "how the students, graduate students and YPs can take advantage of IEEE and PES to network, foster their career development and excel in their workplaces and learning institutions. To demonstrate how IEEE members work together in their local communities to develop ideas that leverage technology for a better future.
+<br/><img src='/images/p11.jpg'><br/><img src='/images/p12.jpg'>"
 collection: portfolio
 ---
 
