@@ -5,7 +5,7 @@ type: "Course"
 permalink: /teaching/2015-spring-teaching-1
 venue: "DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING, AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY / ENGINEERING TECHNICAL COLLEGE"
 date: 2022-01-01
-location: "Najaf, Iraw"
+location: "Najaf, Iraq"
 ---
 This course helps students to aware about new Technology. This course covers Microcontroller, Embedded System and knowledge of latest Sofware.
 
