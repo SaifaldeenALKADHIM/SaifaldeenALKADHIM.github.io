@@ -10,8 +10,8 @@ locale                   : "en-US"
 title                    : "Saifaldeen ALAKDHIM"
 title_separator          : "---"
 name                     : &name "Saif aldeen Saad Obayes ALKADHIM"
-description              : &description "Personal Website"
-url                      : https://SaifaldeenALKADHIM.github.io # the base hostname & protocol for your site e.g. "https://SaifaldeenALKADHIM.github.io"
+description              : "<a href='https://cnj.atu.edu.iq'>DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING</a> <a href='https://atu.edu.iq'>AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY</a>"
+url                      : #SaifaldeenALKADHIM.github.io # the base hostname & protocol for your site e.g. "https://SaifaldeenALKADHIM.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "SaifaldeenALKADHIM.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -85,12 +85,11 @@ author:
   bio              : "Assistant Lecturer（助教）,🇮🇶 🇭🇺 🇨🇳, In-Sensor Computing for NEMS & MEMS , Materials, Devices, and Integration Technologies" 
                       #I AM A PHD STUDENT AT STATE KEY LABORATORY OF ELECTRICAL INSULATION AND POWER EQUIPMENT, IEMIT,XI’AN JIAOTONG UNIVERSITY,XI’AN,710049, P. R. CHINA. PREVIOUSLY, I WAS AN ASSISTANT LECTURER AT THE DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING, AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY / ENGINEERING TECHNICAL COLLEGE.
   location         : "Xian,Shaanxi,China;Budapest,Hungary"
-  employer         : "AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY(https://atu.edu.iq)" 
-  #ENGINEERING TECHNICAL COLLEGE/nDEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING/n        : "https://cnj.atu.edu.iq"
+  employer         : 
   researchgate     : "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
   googlescholar    : "https://scholar.google.com/citations?user=Nhw1sGgAAAAJ&hl"
-  email            :  "saifaldeen.saad@ieee.org"
-  email            :  "saif.aldeen.cnj@atu.edu.iq"
+  email1            :  "saifaldeen.saad@ieee.org"
+  email2            :  "saif.aldeen.cnj@atu.edu.iq"
   researchgate     : "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
   uri              :
   bitbucket        :
