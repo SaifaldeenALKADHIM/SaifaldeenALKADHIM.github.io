@@ -8,49 +8,11 @@
 # Site Settings
 locale                   : "en-US"
 title                    : "Saifaldeen ALAKDHIM"
-title_separator          : "---"
-name                     : &name "Saif aldeen Saad Obayes ALKADHIM"
-description              : "<a href='https://cnj.atu.edu.iq'>DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING</a> <a href='https://atu.edu.iq'>AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY</a>"
-url                      : #SaifaldeenALKADHIM.github.io # the base hostname & protocol for your site e.g. "https://SaifaldeenALKADHIM.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
+name                     : "Saif aldeen Saad Obayes ALKADHIM"
+description              : "<a href='https://cnj.atu.edu.iq/'>DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING</a> <a href='https://atu.edu.iq/'>AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY</a>"
 repository               : "SaifaldeenALKADHIM.github.io"
-teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-breadcrumbs              : false # true, false (default)
-words_per_minute         : 160
-future                   : true
-read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false #change to true to add link to talkmap on talks page
-comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
-  disqus:
-    shortname            :
-  discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
-  facebook:
-    appid                : https://www.facebook.com/SaifAldeenAlseedi
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
-staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" # "master", "gh-pages"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
-  format                 : "yml"
-  moderation             : true
-  path                   : "_data/comments/{options.slug}"
-  requiredFields         : ['name', 'email', 'message']
-  transforms:
-    email                : "md5"
-  generatedFields:
-    date:
-      type               : "date"
-      options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
-atom_feed:
-  path                   : # blank (default) uses feed.xml
-
 # SEO Related
-google_site_verification :
+google_site_verification :"4TZ5HtV-5XZR7qxoxfJIXeBg3ymdmPytFzH08pHKKI0"
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
