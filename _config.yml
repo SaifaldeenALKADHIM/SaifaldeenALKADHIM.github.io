@@ -19,9 +19,9 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : 
+  username               : "saifoony"
 facebook:
-  username               :
+  username               : "SaifAldeenAlseedi"
   app_id                 :
   publisher              :
 og_image                 :  # Open Graph/Twitter default site image
@@ -50,8 +50,8 @@ author:
   employer         : "MoE"
   researchgate     : "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
   googlescholar    : "https://scholar.google.com/citations?user=Nhw1sGgAAAAJ&hl"
-  email1            :  "saifaldeen.saad@ieee.org"
-  email2            :  "saif.aldeen.cnj@atu.edu.iq"
+  email            :  "saifaldeen.saad@ieee.org"
+  #email            :  "saif.aldeen.cnj@atu.edu.iq"
   researchgate     : "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
   uri              :
   bitbucket        :
