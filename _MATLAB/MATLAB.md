@@ -1,11 +1,10 @@
 ---
-permalink: /
+layout: archive
 title: "MATLAB"
-excerpt: "MATLAB"
+permalink: /MATLAB/
 author_profile: true
-redirect_from: 
-  - /MATLAB/
-  - /MATLAB.md
+redirect_from:
+  - /MATLAB
 ---
 
 MATLAB
