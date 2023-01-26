@@ -5,7 +5,7 @@ excerpt: "MATLAB"
 author_profile: true
 redirect_from: 
   - /MATLAB/
-  - /MATLAB.html
+  - /MATLAB.md
 ---
 
 MATLAB
