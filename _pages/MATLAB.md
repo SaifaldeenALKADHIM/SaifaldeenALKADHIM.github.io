@@ -7,8 +7,7 @@ redirect_from:
   - /MATLAB
 ---
 
-MATLAB
-======
+
 The biggest technical difference between MATLAB and Python is that in MATLAB, everything is treated as an array, while in Python everything is a more general object. For instance, in MATLAB, strings are arrays of characters or arrays of strings, while in Python, strings have their own type of object called str .
 
 
