@@ -9,7 +9,8 @@
 locale                   : "en-US"
 title                    : "Saifaldeen ALAKDHIM"
 name                     : "Saif aldeen Saad Obayes ALKADHIM"
-description              : "<a href='https://cnj.atu.edu.iq/'>DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING</a> <a href='https://atu.edu.iq/'>AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY</a>"
+description              : "(https://cnj.atu.edu.iq)[DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING] (https://atu.edu.iq)[AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY]"
+#description              : "<a href='https://cnj.atu.edu.iq/'>DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING</a> <a href='https://atu.edu.iq/'>AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY</a>"
 repository               : "SaifaldeenALKADHIM.github.io"
 # SEO Related
 google_site_verification : "4TZ5HtV-5XZR7qxoxfJIXeBg3ymdmPytFzH08pHKKI0"
@@ -47,7 +48,7 @@ author:
   bio              : "Assistant Lecturer（助教）,🇮🇶 🇭🇺 🇨🇳, In-Sensor Computing for NEMS & MEMS , Materials, Devices, and Integration Technologies" 
                       #I AM A PHD STUDENT AT STATE KEY LABORATORY OF ELECTRICAL INSULATION AND POWER EQUIPMENT, IEMIT,XI’AN JIAOTONG UNIVERSITY,XI’AN,710049, P. R. CHINA. PREVIOUSLY, I WAS AN ASSISTANT LECTURER AT THE DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING, AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY / ENGINEERING TECHNICAL COLLEGE.
   location         : "Xian,Shaanxi,China;Budapest,Hungary"
-  employer         : "MoE"
+  employer         : "AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY"
   researchgate     : "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
   googlescholar    : "https://scholar.google.com/citations?user=Nhw1sGgAAAAJ&hl"
   email            :  "saifaldeen.saad@ieee.org"
