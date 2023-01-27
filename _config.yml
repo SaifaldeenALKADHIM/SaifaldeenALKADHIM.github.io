@@ -21,6 +21,8 @@ yandex_site_verification :
 # Social Sharing
 twitter:
   username               : "saifoony"
+instagram:
+  username               : "saif.alseedi"
 facebook:
   username               : "SaifAldeenAlseedi"
   app_id                 :
@@ -52,7 +54,7 @@ author:
   researchgate     : "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
   googlescholar    : "https://scholar.google.com/citations?user=Nhw1sGgAAAAJ&hl"
   email            :  "saifaldeen.saad@ieee.org"
-  #email            :  "saif.aldeen.cnj@atu.edu.iq"
+  #email           :  "saif.aldeen.cnj@atu.edu.iq"
   researchgate     : "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
   uri              :
   bitbucket        :
