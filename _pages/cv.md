@@ -62,7 +62,10 @@ Skills
 
 Publications
 ======
- -	Al-Kadhim, S., 2017. Industrial Workshop Based on Internet of Things: Automated Manufacturing Systems Technology. 1st ed. Germany: Noor Publishing, ISBN- 3330965754, 9783330965751.
+-       Saif Aldeen Saad Obayes Al-Kadhim, 2025, Development and performance optimization of ionization-based aerosol sensors using flexible materials for lithium-ion battery safety monitoring, DOI: https://doi.org/10.1016/j.sna.2025.116445
+-       Saif Aldeen Saad Obayes Al-Kadhim, 2025, Study on the design and application of the three-electrode ionization particle sensor, DOI: https://doi.org/10.1016/j.sna.2024.116021 
+-       Saif Aldeen Saad Obayes Al-Kadhim, 2024, Enhanced humidity sensing performance of a triple-electrode ionization sensor utilizing carbon nanotubes, DOI: https://doi.org/10.1016/j.sna.2024.115612 
+-	Al-Kadhim, S., 2017. Industrial Workshop Based on Internet of Things: Automated Manufacturing Systems Technology. 1st ed. Germany: Noor Publishing, ISBN- 3330965754, 9783330965751.
 -	Saif Aldeen Saad Obayes, "Application of Computer Numerical Control Machine Based on Internet of Things System", M.SC. Thesis, University of Technology, 2017.
 -	Saif Aldeen Saad Obayes et al., "CNC Machine Based on Embedded Wireless and IoT for Workshop Development", Proceedings of IEEE-2017 International Conference on Control, Automation and Diagnosis (ICCAD'17), IEEE-RAS Meeting, Tunis, January 2017.
 -	Saif Aldeen Saad Obayes et al., "Prototype Wireless Controller System for Engraving Machine", Proceedings of UKSim-AMSS  19th International Conference on Modelling & Simulation, Cambridge, UK, April 2017.
