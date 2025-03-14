@@ -1,10 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
-
 # Site Settings
 locale                   : "en-US"
 title                    : "Saifaldeen ALKADHIM"
@@ -47,7 +40,7 @@ analytics:
 author:
   name             : "Saifaldeen Saad ALKADHIM"
   avatar           : "profile.png"
-  bio              : "Assistant Lecturer（助教）,🇮🇶 🇭🇺 🇨🇳, In-Sensor Computing for NEMS & MEMS , Materials, Devices, and Integration Technologies" 
+  bio              : "Reseach Engineer, Assistant Lecturer（助教）,🇮🇶 🇭🇺 🇨🇳, In-Sensor Computing for NEMS & MEMS , Materials, Devices, and Integration Technologies" 
                       #I AM A PhD STUDENT AT STATE KEY LABORATORY OF ELECTRICAL INSULATION AND POWER EQUIPMENT, IEMIT,XI’AN JIAOTONG UNIVERSITY,XI’AN,710049, P. R. CHINA. PREVIOUSLY, I WAS AN ASSISTANT LECTURER AT THE DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING, AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY / ENGINEERING TECHNICAL COLLEGE.
   location         : "XiAn,Shaanxi,China"
   employer         : "XI’AN JIAOTONG UNIVERSITY"
@@ -69,7 +62,7 @@ author:
   instagram        : "saif.alseedi"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "saif-aldeen-al-kadhim-96230561"
+  linkedin         : "saif-aldeen-saad-alkadhim-96230561"
   orcid            : "http://orcid.org/0000-0002-2082-9591"
   pinterest        :
   soundcloud       :
