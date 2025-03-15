@@ -1,0 +1,117 @@
+COMSOL Tutorial: Heat Transfer in a Solid Block
+Objective
+This tutorial will guide you through the process of simulating heat transfer in a solid block using COMSOL Multiphysics. By the end of this tutorial, you will be able to:
+
+Set up a 3D geometry.
+
+Define material properties.
+
+Apply boundary conditions.
+
+Solve the heat transfer problem.
+
+Visualize the results.
+
+Step 1: Launch COMSOL
+Open COMSOL Multiphysics.
+
+Click Model Wizard to start a new simulation.
+
+Step 2: Select Physics
+In the Model Wizard, select 3D as the space dimension.
+
+Under Physics, choose Heat Transfer > Heat Transfer in Solids (ht).
+
+Click Add and then Study.
+
+Step 3: Define Geometry
+Go to the Geometry tab.
+
+Click Add Geometry and select Block.
+
+Set the dimensions of the block:
+
+Width: 0.1 m
+
+Height: 0.1 m
+
+Depth: 0.1 m
+
+Click Build All to create the geometry.
+
+Step 4: Define Material Properties
+Go to the Materials tab.
+
+Click Add Material and select Built-in > Aluminum.
+
+Assign the material to the block by selecting the block in the geometry and clicking Add to Selection.
+
+Step 5: Apply Boundary Conditions
+Go to the Heat Transfer tab.
+
+Add a Temperature boundary condition:
+
+Select one face of the block.
+
+Set the temperature to 373.15 K (100°C).
+
+Add a Heat Flux boundary condition:
+
+Select the opposite face of the block.
+
+Set the heat flux to 1000 W/m².
+
+Step 6: Mesh the Geometry
+Go to the Mesh tab.
+
+Click Build All to generate a default mesh.
+
+(Optional) Refine the mesh for higher accuracy:
+
+Right-click Mesh and select Size.
+
+Set the element size to Fine.
+
+Step 7: Run the Simulation
+Go to the Study tab.
+
+Click Compute to solve the problem.
+
+Wait for the simulation to complete.
+
+Step 8: Visualize Results
+Go to the Results tab.
+
+Add a Surface plot to visualize the temperature distribution:
+
+Select Temperature (ht) as the expression.
+
+Click Plot.
+
+Add a Slice plot to see the temperature gradient inside the block:
+
+Select Temperature (ht) as the expression.
+
+Adjust the slice position using the slider.
+
+Step 9: Export Results
+To export the temperature distribution:
+
+Right-click on the Surface plot.
+
+Select Export and choose your preferred format (e.g., .png, .csv).
+
+Step 10: Save the Model
+Go to File > Save As.
+
+Save the model as Heat_Transfer_Tutorial.mph.
+
+Additional Tips
+Use Parametric Sweep to study the effect of varying parameters (e.g., heat flux or material properties).
+
+Explore other physics modules (e.g., fluid flow, structural mechanics) for multiphysics simulations.
+
+Troubleshooting
+If the simulation fails, check the mesh quality and boundary conditions.
+
+Use the Log window to identify errors or warnings.
