@@ -18,7 +18,7 @@ The physics of gas discharge involves solving the following equations:
 - Electron continuity equation
 - Ion continuity equation
 
-For more details, see the [theory document](theory/theory.md).
+For more details, see the [theory document]([theory/theory.md](https://github.com/SaifaldeenALKADHIM/SaifaldeenALKADHIM.github.io/blob/master/Comsol/theory/ElectricDischargeModuleUsersGuide.pdf)).
 
 ## COMSOL Setup
 1. Open COMSOL Multiphysics.
