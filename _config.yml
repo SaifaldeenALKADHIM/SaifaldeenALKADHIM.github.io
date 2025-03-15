@@ -148,6 +148,7 @@ collections:
     output: true
     permalink: /:collection/:path/
 
+words_per_minute: 200
 
 # Defaults
 defaults:
