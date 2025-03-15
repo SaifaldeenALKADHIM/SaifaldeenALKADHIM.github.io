@@ -42,7 +42,7 @@ For detailed instructions, see the [COMSOL model file](https://github.com/Saifal
 ## Simulation Results
 The simulation results show the electric potential, electron density, and ion density distributions.
 
-![Electric Potential](https://github.com/SaifaldeenALKADHIM/SaifaldeenALKADHIM.github.io/blob/master/Comsol/images/VFPt_metal_balls_largesmall_potential%2Bcontour.svg.png)
+<img src="images/VFPt_metal_balls_largesmall_potential+contour.svg.png" width="300" alt="VFPt metal balls largesmall potential contour">
 
 For more results, see the [results folder](results/).
 
