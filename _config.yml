@@ -148,6 +148,7 @@ collections:
     output: true
     permalink: /:collection/:path/
 
+# Reading time calculation
 words_per_minute: 200
 
 # Defaults
