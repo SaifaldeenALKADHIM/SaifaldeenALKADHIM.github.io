@@ -1,3 +1,13 @@
+---
+layout: archive
+title: "COMSOL Multiphysics"
+permalink: /Comsol/
+author_profile: true
+redirect_from:
+  - /Comsol
+---
+
+
 # COMSOL Gas Discharge Tutorial
 
 This tutorial provides a step-by-step guide for simulating gas discharge in COMSOL Multiphysics.
