@@ -44,7 +44,7 @@ The simulation results show the electric potential, electron density, and ion de
 
 <img src="images/VFPt_metal_balls_largesmall_potential+contour.svg.png" width="300" alt="VFPt metal balls largesmall potential contour">
 
-For more results, see the [results folder](results/).
+For more results, see the [results](https://github.com/SaifaldeenALKADHIM/SaifaldeenALKADHIM.github.io/blob/master/Comsol/results/Truilhe_6191_poster.pdf)
 
 ## Conclusion
 This tutorial demonstrates how to simulate gas discharge in COMSOL Multiphysics. The results can be used to analyze plasma behavior in various applications.
