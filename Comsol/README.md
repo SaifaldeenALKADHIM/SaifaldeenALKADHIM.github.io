@@ -27,12 +27,12 @@ For more details, see the [theory document](https://github.com/SaifaldeenALKADHI
 4. Set up the boundary conditions and mesh.
 5. Run the simulation.
 
-For detailed instructions, see the [COMSOL model file](comsol_files/gas_discharge.mph).
+For detailed instructions, see the [COMSOL model file](https://github.com/SaifaldeenALKADHIM/SaifaldeenALKADHIM.github.io/blob/master/Comsol/comsol_files/argon_dbd_1d_EEFD_variants.mph).
 
 ## Simulation Results
 The simulation results show the electric potential, electron density, and ion density distributions.
 
-![Electric Potential](images/electric_potential.png)
+![Electric Potential](https://github.com/SaifaldeenALKADHIM/SaifaldeenALKADHIM.github.io/blob/master/Comsol/images/VFPt_metal_balls_largesmall_potential%2Bcontour.svg.png)
 
 For more results, see the [results folder](results/).
 
@@ -40,6 +40,3 @@ For more results, see the [results folder](results/).
 This tutorial demonstrates how to simulate gas discharge in COMSOL Multiphysics. The results can be used to analyze plasma behavior in various applications.
 
 ---
-
-## License
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
