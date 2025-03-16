@@ -2,7 +2,7 @@
 title: "Electronics Technology: The Asian Higher School of Power Electronics Technology"
 collection: talks
 type: "Talk"
-permalink: /talks/talk-4
+permalink: /_talks/talk-4
 venue: "School of Electrical Engineering of Zhejiang University"
 date: June 27 to July 1, 2024
 location: "Yuquan Campus, Zhejiang University, Hangzhou, Zhejiang Province"
