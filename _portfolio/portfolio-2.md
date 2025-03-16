@@ -19,10 +19,12 @@ collection: portfolio
 <h2>Outcomes</h2>
 <p>The project successfully engaged students in creating innovative solutions for social challenges.</p>
 
-<h2>Technologies Used</h2>
+<h2>Our Mission</h2>
 <ul>
-  <li>Technology 1</li>
-  <li>Technology 2</li>
+<li>To create an international platform for the participants to showcase their talents, innovations and networking for fruitful collaborations and partnerships to achieve their future endeavors.</li>
+<li>To identify, recognize and motivate next generation innovators to come up with viable solutions to social issues with their innovative ideas.</li>
+<li>To connect student innovators with potential technical knowledge and skills from Industry/Organizations.</li>
+<li>To motivate students to develop products for societal requirements using STEM concepts which contributes to UN sustainable development goals.</li>
 </ul>
-
-<p>For more information, visit the <a href="https://example.com">project website</a>.</p>
+ 
+<p>For more information, visit the <a href="https://ieeeyesist12.org/tracks/junior-einstein/">IEEE YESIST12 Junior Einstein Track</a>.</p>
