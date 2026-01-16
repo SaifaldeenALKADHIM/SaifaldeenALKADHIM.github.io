@@ -1,6 +1,6 @@
 ---
 title: '📖 Research Brief: A Liquid Density Sensor Based On AlN Piezoelectric Micromach'
-date: 2026-01-16T20:08:36.812796
+date: 2025-12-16T20:08:36.812796
 permalink: /posts/2026-01-16--research-brief-a-liquid-density-sensor-based-on-a/
 categories:
   - Research
@@ -27,4 +27,5 @@ To overcome the limitations of conventional liquid density sensors, MEMS-based a
 
 ---
 *This is an auto-generated post from latest research publications related to your work.*
+
 

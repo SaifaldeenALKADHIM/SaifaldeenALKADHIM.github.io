@@ -1,6 +1,6 @@
 ---
 title: '📖 Research Brief: Accurate laboratory testing of low-frequency triaxial vibrat'
-date: 2026-01-16T20:08:36.834354
+date: 2025-12-16T20:08:36.834354
 permalink: /posts/2026-01-16--research-brief-accurate-laboratory-testing-of-low/
 categories:
   - Research
@@ -27,4 +27,5 @@ Triaxial vibration sensor are widely used used in various application. Recently,
 
 ---
 *This is an auto-generated post from latest research publications related to your work.*
+
 

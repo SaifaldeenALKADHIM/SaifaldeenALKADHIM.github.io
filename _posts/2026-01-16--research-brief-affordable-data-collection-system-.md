@@ -1,6 +1,6 @@
 ---
 title: '📖 Research Brief: Affordable Data Collection System for UAVs Taxi Vibration Te'
-date: 2026-01-16T20:08:36.793881
+date: 2025-12-16T20:08:36.793881
 permalink: /posts/2026-01-16--research-brief-affordable-data-collection-system-/
 categories:
   - Research
@@ -27,4 +27,5 @@ Structural vibration testing plays a key role in aerospace engineering for evalu
 
 ---
 *This is an auto-generated post from latest research publications related to your work.*
+
 
