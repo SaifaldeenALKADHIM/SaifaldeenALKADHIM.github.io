@@ -1,3 +1,10 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
+
 # Site Settings
 locale                   : "en-US"
 title                    : "Saifaldeen ALKADHIM"
@@ -38,13 +45,12 @@ analytics:
 
 # Site Author
 author:
-  name             : "Saifaldeen Saad ALKADHIM"
+  name             : "Saif Aldeen Saad Obayes Al-Kadhim, Ph.D."
   avatar           : "profile.png"
-  bio              : "Reseach Engineer, Assistant Lecturer（助教）,🇮🇶 🇭🇺 🇨🇳, In-Sensor Computing for NEMS & MEMS , Materials, Devices, and Integration Technologies" 
-                      #I AM A Reasearcher at STATE KEY LABORATORY OF ELECTRICAL INSULATION AND POWER EQUIPMENT, IEMIT,XI’AN JIAOTONG UNIVERSITY,XI’AN,710049, P. R. CHINA. PREVIOUSLY, I WAS AN ASSISTANT LECTURER AT THE DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING, AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY / ENGINEERING TECHNICAL COLLEGE.
-  location         : "XiAn,Shaanxi,China"
+  bio              : "Assistant Professor | IEEE Senior Member | Expert in MEMS & IoT Systems | In-Sensor Computing for NEMS & MEMS, Materials, Devices, and Integration Technologies" 
+  location         : "Budapest, Hungary"
   employer         : "XI’AN JIAOTONG UNIVERSITY"
-  researchgate     : "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
+
   googlescholar    : "https://scholar.google.com/citations?user=Nhw1sGgAAAAJ&hl"
   email            :  "saifaldeen.saad@ieee.org"
   #email           :  "saif.aldeen.cnj@atu.edu.iq"
@@ -62,7 +68,7 @@ author:
   instagram        : "saif.alseedi"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "saif-aldeen-saad-alkadhim-96230561"
+  linkedin         : "saif-aldeen-al-kadhim-96230561"
   orcid            : "http://orcid.org/0000-0002-2082-9591"
   pinterest        :
   soundcloud       :
@@ -148,8 +154,6 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-# Reading time calculation
-words_per_minute: 200
 
 # Defaults
 defaults:
