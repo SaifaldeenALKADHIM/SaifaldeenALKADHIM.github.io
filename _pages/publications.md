@@ -10,7 +10,7 @@ author_profile: true
 - **Saif Aldeen Saad Obayes Al-Kadhim**. Study on the design and application of the three-electrode ionization particle sensor. DOI: [10.1016/j.sna.2024.116021](https://doi.org/10.1016/j.sna.2024.116021)
 
 ### 2024
-- **Saif Aldeen Saad Obayes Al-Kadhim**. Enhanced humidity sensing performance of a triple-electrode ionization sensor utilizing carbon nanotubes. DOI: [10.1016/j.sna.2024.115612](https://doi.org/10.1016/j.sna.2024.115612)
+- **Saif Aldeen Saad Obayes Al-Kadhim, Yong Zhang, Zhenzhen Cheng, Waqas Muhammad, Weizhuo Gao, Minghui Zhao, and Xueyong Wei**. Enhanced humidity sensing performance of a triple-electrode ionization sensor utilizing carbon nanotubes. *Sensors and Actuators A: Physical*, vol. 376, article 115612, Elsevier. DOI: [10.1016/j.sna.2024.115612](https://doi.org/10.1016/j.sna.2024.115612)
 
 ### 2017
 - **Saif Aldeen Saad Obayes**. Application of Computer Numerical Control Machine Based on Internet of Things System. M.Sc. Thesis, University of Technology.
