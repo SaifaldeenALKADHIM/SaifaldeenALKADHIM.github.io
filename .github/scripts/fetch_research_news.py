@@ -33,6 +33,7 @@ RSS_FEEDS = [
     "https://feeds.arxiv.org/rss/eess.SY",  # Systems and Control
     "https://www.nature.com/nature/current_issue/rss",  # Nature Journal
     "https://www.nature.com/ncomms/current_issue/rss",  # Nature Communications
+    "https://ieeexplore.ieee.org/rss/I_TOC.XML",  # IEEE Xplore General
 ]
 
 def fetch_arxiv_papers(query, max_results=10):
@@ -129,58 +130,74 @@ def fetch_rss_news(max_items=10):
     return articles
 
 def fetch_ieee_xplore(max_results=5):
-    """Fetch latest papers from IEEE Xplore
-    Note: Requires IEEE_API_KEY environment variable for full functionality
-    Falls back to search-based approach without API key
+    """Fetch latest papers from IEEE Xplore via RSS and API
+    Uses IEEE RSS feed as primary, API as fallback
     """
     articles = []
-    ieee_api_key = os.getenv('IEEE_API_KEY')
-    
-    if not ieee_api_key:
-        print(f"  ℹ️  IEEE Xplore: API key not set (set IEEE_API_KEY environment variable for more results)")
-        return articles
     
     try:
-        # IEEE Xplore API endpoint
-        base_url = "https://ieeexplore.ieee.org/iot/api/"
+        # Try IEEE Xplore RSS feed first (most reliable)
+        print(f"  📡 Fetching IEEE Xplore RSS feed...")
+        ieee_rss = "https://ieeexplore.ieee.org/rss/I_TOC_new.XML"
         
-        search_terms = [
-            "MEMS sensor",
-            "machine learning IoT",
-            "AI embedded systems",
-            "neural networks hardware"
-        ]
+        feed = feedparser.parse(ieee_rss)
+        if feed.entries:
+            for entry in feed.entries[:3]:
+                title = entry.get('title', '')
+                summary = entry.get('summary', '')
+                published = entry.get('published', datetime.now().isoformat())
+                link = entry.get('link', '')
+                
+                # Filter for relevant topics
+                full_text = (title + " " + summary).lower()
+                if any(topic.lower() in full_text for topic in RESEARCH_TOPICS):
+                    articles.append({
+                        'title': title,
+                        'summary': summary[:300],
+                        'published': published[:10] if len(published) >= 10 else published,
+                        'link': link,
+                        'source': 'IEEE Xplore'
+                    })
+                    print(f"    ✅ Found: {title[:50]}...")
         
-        for term in search_terms[:2]:  # Limit to avoid rate limiting
+        if not articles:
+            print(f"  ℹ️  No relevant IEEE papers found in RSS")
+            
+        # Optional: Try API if available
+        ieee_api_key = os.getenv('IEEE_API_KEY')
+        if ieee_api_key and len(articles) < 2:
+            print(f"  🔑 Trying IEEE API...")
             try:
+                base_url = "https://ieeexploreapi.ieee.org/api/v1/search/articles"
                 params = {
-                    'action': 'search',
-                    'highlight': 'true',
-                    'matchBoolean': 'true',
-                    'queryText': term,
-                    'pageNumber': 1,
-                    'pageSize': 3,
-                    'apikey': ieee_api_key
+                    'querytext': 'MEMS OR "machine learning" IoT',
+                    'apikey': ieee_api_key,
+                    'max_records': 3,
+                    'sort_order': 'desc',
+                    'sort_by': 'publication_date'
                 }
                 
                 response = requests.get(base_url, params=params, timeout=10)
                 if response.status_code == 200:
                     data = response.json()
                     if 'articles' in data:
-                        for article in data['articles'][:3]:
-                            articles.append({
-                                'title': article.get('title', 'No title'),
-                                'summary': article.get('abstract', '')[:500],
-                                'published': article.get('publication_date', datetime.now().isoformat()),
-                                'link': f"https://ieeexplore.ieee.org/document/{article.get('article_number', '')}",
-                                'source': 'IEEE Xplore'
-                            })
+                        for article in data['articles'][:2]:
+                            if len(articles) < 5:
+                                articles.append({
+                                    'title': article.get('title', ''),
+                                    'summary': article.get('abstract', '')[:300],
+                                    'published': article.get('publication_date', ''),
+                                    'link': f"https://ieeexplore.ieee.org/document/{article.get('article_number', '')}",
+                                    'source': 'IEEE Xplore'
+                                })
             except Exception as e:
-                print(f"  ⚠️ Error with IEEE Xplore term '{term}': {e}")
+                print(f"  ℹ️  IEEE API unavailable: {str(e)[:50]}")
+                
     except Exception as e:
-        print(f"  ℹ️  IEEE Xplore fetch skipped: {e}")
+        print(f"  ⚠️ IEEE Xplore error: {str(e)[:80]}")
     
     return articles
+
 
 def check_post_exists(title):
     """Check if a post with this title already exists"""
