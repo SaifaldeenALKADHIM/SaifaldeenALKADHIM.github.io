@@ -113,6 +113,9 @@ Developed high-sensitivity sensors addressing thermal runaway detection in lithi
 
 **Innovation:** Three-electrode design using silicon strips as CNT growth substrate with electric field regulation, enabling detection of trace aerosols invisible to conventional sensors.
 
+![High-Precision MEMS Ionization Aerosol Sensor for EV Battery Safety](/images/mems-ionization-sensor-infographic.png)
+*Comprehensive overview of the MEMS ionization aerosol sensor technology for electric vehicle battery safety monitoring, showcasing advanced fabrication processes, triple-electrode assembly, performance metrics (<10s response time, 0.1 µg/m³ detection limit), and competitive advantages over existing commercial technologies.*
+
 ### Carbon Nanotube (CNT) High-Precision Humidity Sensing
 Triple-electrode ionization sensor achieving extreme sensitivity (2024 publication):
 
@@ -220,3 +223,4 @@ Designed **50+ PCB layouts** using Altium Designer and Eagle, achieving **15% pr
 ---
 
 *My career serves as a bridge between diverse engineering disciplines and geographic regions, consistently advancing technology for the benefit of humanity through the synthesis of academic rigor, strategic institutional leadership, and pioneering research.*
+
