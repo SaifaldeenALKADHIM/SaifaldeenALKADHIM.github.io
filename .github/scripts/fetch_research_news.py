@@ -33,41 +33,67 @@ RSS_FEEDS = [
     "https://feeds.arxiv.org/rss/eess.SY",  # Systems and Control
 ]
 
-def fetch_arxiv_papers(query, max_results=5):
-    """Fetch latest papers from arXiv related to research topics"""
+def fetch_arxiv_papers(query, max_results=10):
+    """Fetch latest papers from arXiv using multiple keyword searches"""
     try:
         base_url = "http://export.arxiv.org/api/query?"
-        search_query = f"cat:cs.AI OR cat:cs.LG OR cat:eess.SY"
-        url = f"{base_url}search_query={search_query}&sortBy=submittedDate&sortOrder=descending&max_results={max_results}"
-        
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-        
         papers = []
         import xml.etree.ElementTree as ET
-        root = ET.fromstring(response.content)
         
-        for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
-            title = entry.find('{http://www.w3.org/2005/Atom}title').text
-            summary = entry.find('{http://www.w3.org/2005/Atom}summary').text
-            published = entry.find('{http://www.w3.org/2005/Atom}published').text
-            arxiv_id = entry.find('{http://www.w3.org/2005/Atom}id').text.split('/abs/')[-1]
-            authors = [author.find('{http://www.w3.org/2005/Atom}name').text 
-                      for author in entry.findall('{http://www.w3.org/2005/Atom}author')]
-            
-            # Check if paper is relevant
-            full_text = (title + " " + summary).lower()
-            if any(topic.lower() in full_text for topic in RESEARCH_TOPICS):
-                papers.append({
-                    'title': title,
-                    'summary': summary.strip(),
-                    'published': published,
-                    'arxiv_id': arxiv_id,
-                    'authors': authors,
-                    'url': f"https://arxiv.org/abs/{arxiv_id}"
-                })
+        # Search for papers with keywords related to research
+        search_queries = [
+            "all:MEMS AND all:sensor",
+            "all:machine learning AND all:IoT",
+            "all:carbon nanotube AND all:sensor",
+            "all:neural network AND all:embedded",
+            "all:edge computing AND all:AI"
+        ]
         
-        return papers
+        for search_query in search_queries:
+            try:
+                url = f"{base_url}search_query={search_query}&sortBy=submittedDate&sortOrder=descending&max_results=5"
+                response = requests.get(url, timeout=10)
+                response.raise_for_status()
+                
+                root = ET.fromstring(response.content)
+                
+                for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
+                    title_elem = entry.find('{http://www.w3.org/2005/Atom}title')
+                    summary_elem = entry.find('{http://www.w3.org/2005/Atom}summary')
+                    published_elem = entry.find('{http://www.w3.org/2005/Atom}published')
+                    id_elem = entry.find('{http://www.w3.org/2005/Atom}id')
+                    
+                    if all([title_elem is not None, summary_elem is not None, 
+                           published_elem is not None, id_elem is not None]):
+                        
+                        title = title_elem.text.strip()
+                        summary = summary_elem.text.strip()
+                        published = published_elem.text[:10]
+                        arxiv_id = id_elem.text.split('/abs/')[-1]
+                        
+                        authors = []
+                        for author in entry.findall('{http://www.w3.org/2005/Atom}author'):
+                            name_elem = author.find('{http://www.w3.org/2005/Atom}name')
+                            if name_elem is not None:
+                                authors.append(name_elem.text)
+                        
+                        paper = {
+                            'title': title,
+                            'summary': summary[:300],
+                            'published': published,
+                            'arxiv_id': arxiv_id,
+                            'authors': authors[:5],  # Limit to 5 authors
+                            'url': f"https://arxiv.org/abs/{arxiv_id}"
+                        }
+                        
+                        # Avoid duplicates
+                        if not any(p['arxiv_id'] == arxiv_id for p in papers):
+                            papers.append(paper)
+            except Exception as e:
+                print(f"  ⚠️ Error with query '{search_query}': {e}")
+                continue
+        
+        return papers[:max_results]
     except Exception as e:
         print(f"Error fetching arXiv papers: {e}")
         return []
@@ -106,11 +132,19 @@ def check_post_exists(title):
     if not posts_dir.exists():
         return False
     
+    # Extract core title (remove emojis and extra text)
+    core_title = re.sub(r'[^a-z0-9\s]', '', title.lower())
+    core_title_short = ' '.join(core_title.split()[:5])  # First 5 words
+    
     for post_file in posts_dir.glob("*.md"):
-        with open(post_file, 'r', encoding='utf-8') as f:
-            content = f.read()
-            if title in content:
-                return True
+        try:
+            with open(post_file, 'r', encoding='utf-8') as f:
+                content = f.read().lower()
+                # Check if significant portion of title is already in posts
+                if core_title_short in content:
+                    return True
+        except:
+            pass
     return False
 
 def create_blog_post(title, content, tags=None):
@@ -120,34 +154,40 @@ def create_blog_post(title, content, tags=None):
     
     # Check if post already exists
     if check_post_exists(title):
-        print(f"Post '{title}' already exists. Skipping.")
+        print(f"  ℹ️  Post with similar title exists. Skipping.")
         return False
     
-    # Create filename
+    # Create filename with today's date
     today = datetime.now()
     date_str = today.strftime("%Y-%m-%d")
     slug = re.sub(r'[^\w\s-]', '', title.lower())
-    slug = re.sub(r'[-\s]+', '-', slug)[:50]
+    slug = re.sub(r'[-\s]+', '-', slug)[:60]
     filename = f"_posts/{date_str}-{slug}.md"
     
     # Check if filename already exists today
     posts_dir = Path("_posts")
     if posts_dir.exists():
         existing = list(posts_dir.glob(f"{date_str}-*.md"))
-        if len(existing) > 5:  # Limit 5 posts per day
-            print(f"Already created {len(existing)} posts today. Skipping.")
+        if len(existing) > 15:  # Increased to 15 posts per day (for twice daily posting)
+            print(f"  ⚠️  Already created {len(existing)} posts today (limit reached).")
             return False
     
-    # Create post frontmatter
+    # Create post frontmatter with proper YAML formatting
+    tags_yaml = "\n".join(f"  - {tag}" for tag in tags)
+    
+    # Use PAST date so Jekyll displays it immediately
+    past_date = today - timedelta(days=1)  # Yesterday's date ensures it's always in the past
+    date_iso = past_date.isoformat()
+    
     frontmatter = f"""---
-title: '{title}'
-date: {today.isoformat()}
+title: '{title.replace("'", "\\\"")}'
+date: {date_iso}
 permalink: /posts/{date_str}-{slug}/
 categories:
   - Research
 tags:
-  - {chr(10).join(f'  - {tag}' for tag in tags)}
-excerpt: 'Latest research and news related to AI, MEMS sensors, and IoT systems'
+{tags_yaml}
+excerpt: 'Latest research on AI, MEMS sensors, IoT systems, and emerging technologies'
 ---
 
 {content}
@@ -158,7 +198,7 @@ excerpt: 'Latest research and news related to AI, MEMS sensors, and IoT systems'
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(frontmatter)
     
-    print(f"✅ Created post: {filename}")
+    print(f"✅ Created: {filename}")
     return True
 
 def main():
@@ -173,27 +213,38 @@ def main():
     posts_created = 0
     
     # Create posts from papers
-    for paper in papers[:3]:  # Limit to 3 posts per run
-        title = f"📖 Research Brief: {paper['title'][:60]}"
+    for paper in papers[:7]:  # 7 posts per run (supports twice daily)
+        title = f"📖 {paper['title'][:70]}"
         
-        content = f"""
-**Authors:** {', '.join(paper['authors'][:3])}
+        authors_str = ', '.join(paper['authors'][:5]) if paper['authors'] else 'Unknown Authors'
+        
+        content = f"""**Authors:** {authors_str}
 
-**Published:** {paper['published'][:10]}
+**Published:** {paper['published']}
+
+**arXiv ID:** {paper['arxiv_id']}
 
 ## Summary
-{paper['summary'][:300]}...
+
+{paper['summary']}
+
+## Research Connection
+
+This paper relates to current advances in:
+- Machine Learning and AI systems
+- Embedded computing and edge devices
+- Sensor networks and IoT
+- Neural networks and optimization
 
 ## Read Full Paper
+
 [View on arXiv]({paper['url']})
 
-**Keywords:** AI, Machine Learning, Research, Sensors, IoT
-
 ---
-*This is an auto-generated post from latest research publications related to your work.*
+*Auto-posted from arXiv latest research. {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}*
 """
         
-        if create_blog_post(title, content, tags=["AI", "Research", "arXiv", "Machine Learning"]):
+        if create_blog_post(title, content, tags=["AI", "Research", "arXiv", "ML", "IoT"]):
             posts_created += 1
     
     # Fetch and create from RSS feeds
@@ -224,6 +275,7 @@ def main():
     
     print(f"\n✨ Auto-Post Summary")
     print(f"📝 Posts created: {posts_created}")
+    print(f"⏰ Next run: Twice daily (Morning & Evening)")
     print(f"🚀 Ready to commit and push!")
 
 if __name__ == "__main__":
