@@ -45,13 +45,12 @@ analytics:
 
 # Site Author
 author:
-  name             : "Saifaldeen Saad ALKADHIM"
+  name             : "Saif Aldeen Saad Obayes Al-Kadhim, Ph.D."
   avatar           : "profile.png"
-  bio              : "Assistant Lecturer（助教）,🇮🇶 🇭🇺 🇨🇳, In-Sensor Computing for NEMS & MEMS , Materials, Devices, and Integration Technologies" 
-                      #I AM A PhD STUDENT AT STATE KEY LABORATORY OF ELECTRICAL INSULATION AND POWER EQUIPMENT, IEMIT,XI’AN JIAOTONG UNIVERSITY,XI’AN,710049, P. R. CHINA. PREVIOUSLY, I WAS AN ASSISTANT LECTURER AT THE DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING, AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY / ENGINEERING TECHNICAL COLLEGE.
-  location         : "XiAn,Shaanxi,China"
+  bio              : "Assistant Professor | IEEE Senior Member | Expert in MEMS & IoT Systems | In-Sensor Computing for NEMS & MEMS, Materials, Devices, and Integration Technologies" 
+  location         : "Budapest, Hungary"
   employer         : "XI’AN JIAOTONG UNIVERSITY"
-  researchgate     : "https://www.researchgate.net/profile/Saif_Aldeen_Alkadhim"
+
   googlescholar    : "https://scholar.google.com/citations?user=Nhw1sGgAAAAJ&hl"
   email            :  "saifaldeen.saad@ieee.org"
   #email           :  "saif.aldeen.cnj@atu.edu.iq"
