@@ -1,7 +1,7 @@
 ---
 title: '📖 Audio-Based Tactile Human-Robot Interaction Recognition'
-date: 2026-01-15T21:05:52.937206
-permalink: /posts/2026-01-16--audio-based-tactile-human-robot-interaction-recognition/
+date: 2026-01-15T21:24:24.391850
+permalink: /posts/2026-01-15--audio-based-tactile-human-robot-interaction-recognition/
 categories:
   - Research
 tags:
@@ -36,5 +36,5 @@ This paper relates to current advances in:
 [View on arXiv](https://arxiv.org/abs/2512.11873v1)
 
 ---
-*Auto-posted from arXiv latest research. 2026-01-16 21:05 UTC*
+*Auto-posted from arXiv latest research. 2026-01-16 21:24 UTC*
 

@@ -1,7 +1,7 @@
 ---
 title: '📖 DInf-Grid: A Neural Differential Equation Solver with Differentiable F'
-date: 2026-01-15T21:05:53.040259
-permalink: /posts/2026-01-16--dinf-grid-a-neural-differential-equation-solver-with-differ/
+date: 2026-01-15T21:24:24.412270
+permalink: /posts/2026-01-15--dinf-grid-a-neural-differential-equation-solver-with-differ/
 categories:
   - Research
 tags:
@@ -36,5 +36,5 @@ This paper relates to current advances in:
 [View on arXiv](https://arxiv.org/abs/2601.10715v1)
 
 ---
-*Auto-posted from arXiv latest research. 2026-01-16 21:05 UTC*
+*Auto-posted from arXiv latest research. 2026-01-16 21:24 UTC*
 

@@ -157,9 +157,12 @@ def create_blog_post(title, content, tags=None):
         print(f"  ℹ️  Post with similar title exists. Skipping.")
         return False
     
-    # Create filename with today's date
+    # Use PAST date so Jekyll displays it immediately
     today = datetime.now()
-    date_str = today.strftime("%Y-%m-%d")
+    past_date = today - timedelta(days=1)  # Yesterday's date ensures it's always in the past
+    date_str = past_date.strftime("%Y-%m-%d")
+    date_iso = past_date.isoformat()
+    
     slug = re.sub(r'[^\w\s-]', '', title.lower())
     slug = re.sub(r'[-\s]+', '-', slug)[:60]
     filename = f"_posts/{date_str}-{slug}.md"
@@ -174,10 +177,6 @@ def create_blog_post(title, content, tags=None):
     
     # Create post frontmatter with proper YAML formatting
     tags_yaml = "\n".join(f"  - {tag}" for tag in tags)
-    
-    # Use PAST date so Jekyll displays it immediately
-    past_date = today - timedelta(days=1)  # Yesterday's date ensures it's always in the past
-    date_iso = past_date.isoformat()
     
     frontmatter = f"""---
 title: '{title.replace("'", "\\\"")}'
