@@ -278,14 +278,55 @@ def main():
     print(f"⏰ Time: {datetime.now().isoformat()}")
     print(f"🔍 Tracking: {', '.join(RESEARCH_TOPICS[:5])}...\n")
     
-    # Fetch papers from arXiv
-    print("📚 Fetching from arXiv...")
-    papers = fetch_arxiv_papers("research papers", max_results=10)
-    
     posts_created = 0
     
+    # Priority 1: Fetch from Nature RSS (highest impact)
+    print("📰 Fetching from Nature.com RSS...")
+    nature_articles = fetch_rss_news(max_items=8)
+    nature_articles = [a for a in nature_articles if 'nature' in a.get('source', '').lower()]
+    
+    for article in nature_articles[:3]:  # 3 posts from Nature
+        title = f"🌿 {article['title'][:60]}"
+        
+        content = f"""**Source:** {article['source']}
+
+**Published:** {article['published'][:10]}
+
+## Overview
+{article['summary'][:300]}...
+
+[Read Full Article]({article['link']})
+"""
+        
+        if create_blog_post(title, content, tags=["Nature", "Research", "Science"]):
+            posts_created += 1
+    
+    # Priority 2: Fetch from IEEE Xplore RSS (engineering focus)
+    print("\n🔬 Fetching from IEEE Xplore...")
+    ieee_articles = fetch_ieee_xplore(max_results=5)
+    
+    for article in ieee_articles[:3]:  # 3 posts from IEEE
+        title = f"⚡ {article['title'][:60]}"
+        
+        content = f"""**Source:** {article['source']}
+
+**Published:** {article['published'][:10]}
+
+## Overview
+{article['summary'][:300]}...
+
+[Read Full Article]({article['link']})
+"""
+        
+        if create_blog_post(title, content, tags=["IEEE", "Engineering", "Hardware"]):
+            posts_created += 1
+    
+    # Priority 3: Fetch papers from arXiv (latest preprints)
+    print("\n📚 Fetching from arXiv...")
+    papers = fetch_arxiv_papers("research papers", max_results=10)
+    
     # Create posts from papers
-    for paper in papers[:7]:  # 7 posts per run (supports twice daily)
+    for paper in papers[:5]:  # 5 posts per run
         title = f"📖 {paper['title'][:70]}"
         
         authors_str = ', '.join(paper['authors'][:5]) if paper['authors'] else 'Unknown Authors'
@@ -317,74 +358,6 @@ This paper relates to current advances in:
 """
         
         if create_blog_post(title, content, tags=["AI", "Research", "arXiv", "ML", "IoT"]):
-            posts_created += 1
-    
-    # Fetch and create from RSS feeds
-    print("\n🌐 Fetching from Research Feeds...")
-    articles = fetch_rss_news(max_items=5)
-    
-    for article in articles[:2]:  # Limit to 2 posts from feeds
-        title = f"📰 {article['title'][:60]}"
-        
-        content = f"""
-**Source:** {article['source']}
-
-**Published:** {article['published'][:10]}
-
-## Overview
-{article['summary'][:300]}...
-
-[Read Full Article]({article['link']})
-"""
-        
-        if create_blog_post(title, content, tags=["News", "Research", "AI", "IoT"]):
-            posts_created += 1
-    
-    # Fetch and create from IEEE Xplore
-    print("\n📡 Fetching from IEEE Xplore...")
-    ieee_articles = fetch_ieee_xplore(max_results=3)
-    
-    for article in ieee_articles[:2]:  # Limit to 2 posts from IEEE
-        title = f"🔬 {article['title'][:60]}"
-        
-        content = f"""
-**Source:** {article['source']}
-
-**Published:** {article['published'][:10]}
-
-## Overview
-{article['summary'][:300]}...
-
-[Read Full Article]({article['link']})
-"""
-        
-        if create_blog_post(title, content, tags=["IEEE", "Research", "Hardware", "Engineering"]):
-            posts_created += 1
-    
-    # Fetch and create from RSS feeds
-    print("\n🌐 Fetching from Research Feeds...")
-    articles = fetch_rss_news(max_items=5)
-    
-    for article in articles[:2]:  # Limit to 2 posts from feeds
-        title = f"📰 {article['title'][:60]}"
-        
-        content = f"""
-**Source:** {article['source']}
-
-**Published:** {article['published'][:10]}
-
-## Overview
-{article['summary'][:300]}...
-
-[Read Full Article]({article['link']})
-
-**Related to:** AI, Research, MEMS, Sensors, IoT
-
----
-*This is an auto-generated post from research news feeds.*
-"""
-        
-        if create_blog_post(title, content, tags=["News", "Research", "AI", "Technology"]):
             posts_created += 1
     
     print(f"\n✨ Auto-Post Summary")
