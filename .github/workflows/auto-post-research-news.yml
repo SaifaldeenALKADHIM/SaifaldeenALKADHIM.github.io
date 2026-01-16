@@ -35,6 +35,7 @@ jobs:
         run: python .github/scripts/fetch_research_news.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IEEE_API_KEY: ${{ secrets.IEEE_API_KEY }}
 
       - name: Configure Git
         run: |
