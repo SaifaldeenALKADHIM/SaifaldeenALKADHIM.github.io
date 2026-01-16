@@ -31,6 +31,8 @@ RSS_FEEDS = [
     "https://feeds.arxiv.org/rss/cs.AI",  # Artificial Intelligence
     "https://feeds.arxiv.org/rss/cs.LG",  # Machine Learning
     "https://feeds.arxiv.org/rss/eess.SY",  # Systems and Control
+    "https://www.nature.com/nature/current_issue/rss",  # Nature Journal
+    "https://www.nature.com/ncomms/current_issue/rss",  # Nature Communications
 ]
 
 def fetch_arxiv_papers(query, max_results=10):
@@ -123,6 +125,60 @@ def fetch_rss_news(max_items=10):
                     })
         except Exception as e:
             print(f"Error fetching RSS feed {feed_url}: {e}")
+    
+    return articles
+
+def fetch_ieee_xplore(max_results=5):
+    """Fetch latest papers from IEEE Xplore
+    Note: Requires IEEE_API_KEY environment variable for full functionality
+    Falls back to search-based approach without API key
+    """
+    articles = []
+    ieee_api_key = os.getenv('IEEE_API_KEY')
+    
+    if not ieee_api_key:
+        print(f"  ℹ️  IEEE Xplore: API key not set (set IEEE_API_KEY environment variable for more results)")
+        return articles
+    
+    try:
+        # IEEE Xplore API endpoint
+        base_url = "https://ieeexplore.ieee.org/iot/api/"
+        
+        search_terms = [
+            "MEMS sensor",
+            "machine learning IoT",
+            "AI embedded systems",
+            "neural networks hardware"
+        ]
+        
+        for term in search_terms[:2]:  # Limit to avoid rate limiting
+            try:
+                params = {
+                    'action': 'search',
+                    'highlight': 'true',
+                    'matchBoolean': 'true',
+                    'queryText': term,
+                    'pageNumber': 1,
+                    'pageSize': 3,
+                    'apikey': ieee_api_key
+                }
+                
+                response = requests.get(base_url, params=params, timeout=10)
+                if response.status_code == 200:
+                    data = response.json()
+                    if 'articles' in data:
+                        for article in data['articles'][:3]:
+                            articles.append({
+                                'title': article.get('title', 'No title'),
+                                'summary': article.get('abstract', '')[:500],
+                                'published': article.get('publication_date', datetime.now().isoformat()),
+                                'link': f"https://ieeexplore.ieee.org/document/{article.get('article_number', '')}",
+                                'source': 'IEEE Xplore'
+                            })
+            except Exception as e:
+                print(f"  ⚠️ Error with IEEE Xplore term '{term}': {e}")
+    except Exception as e:
+        print(f"  ℹ️  IEEE Xplore fetch skipped: {e}")
     
     return articles
 
@@ -244,6 +300,48 @@ This paper relates to current advances in:
 """
         
         if create_blog_post(title, content, tags=["AI", "Research", "arXiv", "ML", "IoT"]):
+            posts_created += 1
+    
+    # Fetch and create from RSS feeds
+    print("\n🌐 Fetching from Research Feeds...")
+    articles = fetch_rss_news(max_items=5)
+    
+    for article in articles[:2]:  # Limit to 2 posts from feeds
+        title = f"📰 {article['title'][:60]}"
+        
+        content = f"""
+**Source:** {article['source']}
+
+**Published:** {article['published'][:10]}
+
+## Overview
+{article['summary'][:300]}...
+
+[Read Full Article]({article['link']})
+"""
+        
+        if create_blog_post(title, content, tags=["News", "Research", "AI", "IoT"]):
+            posts_created += 1
+    
+    # Fetch and create from IEEE Xplore
+    print("\n📡 Fetching from IEEE Xplore...")
+    ieee_articles = fetch_ieee_xplore(max_results=3)
+    
+    for article in ieee_articles[:2]:  # Limit to 2 posts from IEEE
+        title = f"🔬 {article['title'][:60]}"
+        
+        content = f"""
+**Source:** {article['source']}
+
+**Published:** {article['published'][:10]}
+
+## Overview
+{article['summary'][:300]}...
+
+[Read Full Article]({article['link']})
+"""
+        
+        if create_blog_post(title, content, tags=["IEEE", "Research", "Hardware", "Engineering"]):
             posts_created += 1
     
     # Fetch and create from RSS feeds
