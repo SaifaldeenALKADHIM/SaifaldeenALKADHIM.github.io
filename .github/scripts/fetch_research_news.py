@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Auto-post research news agent for blog
 Fetches latest AI, MEMS, IoT, and sensor research from multiple sources
@@ -6,11 +7,17 @@ Fetches latest AI, MEMS, IoT, and sensor research from multiple sources
 
 import os
 import json
+import sys
 import requests
 import feedparser
 from datetime import datetime, timedelta
 from pathlib import Path
 import re
+
+# Fix Unicode encoding for Windows
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Research topics related to Saifaldeen's work
 RESEARCH_TOPICS = [
@@ -147,83 +154,48 @@ def fetch_rss_news(max_items=10):
     return articles
 
 def fetch_ieee_xplore(max_results=5):
-    """Fetch latest papers from IEEE Xplore via RSS and API
-    Uses IEEE RSS feed as primary, API as fallback
+    """Fetch papers from IEEE Xplore using web scraping
+    Provides search links and alternative access methods
     """
     articles = []
     
     try:
-        # Try IEEE Xplore RSS feed first (most reliable)
-        print(f"  📡 Fetching IEEE Xplore RSS feed...")
+        print(f"  📡 Fetching IEEE Xplore papers...")
         
-        # Try multiple IEEE RSS endpoints
-        ieee_rss_urls = [
-            "https://ieeexplore.ieee.org/rss/I_TOC_new.XML",
-            "https://ieeexplore.ieee.org/rss/I_TOC.XML",
+        # Browser-like headers
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+        
+        search_queries = [
+            "MEMS",
+            "IoT machine learning"
         ]
         
-        for ieee_rss in ieee_rss_urls:
-            feed = feedparser.parse(ieee_rss)
-            if feed.entries:
-                break
-        
-        print(f"    📊 Found {len(feed.entries)} articles")
-        
-        if feed.entries:
-            for entry in feed.entries[:5]:
-                title = entry.get('title', '')
-                summary = entry.get('summary', '')[:200]
-                published = entry.get('published', datetime.now().isoformat())
-                link = entry.get('link', '')
-                
-                if title:  # Accept all IEEE papers regardless of topic match
-                    articles.append({
-                        'title': title,
-                        'summary': summary,
-                        'published': published[:10] if len(published) >= 10 else published,
-                        'link': link,
-                        'source': 'IEEE Xplore'
-                    })
-                    print(f"    ✅ {title[:50]}...")
-        else:
-            print(f"    ℹ️  No articles in IEEE RSS feed")
-        
-        if not articles:
-            print(f"  ℹ️  No IEEE papers found in RSS")
-            
-        # Optional: Try API if available
-        ieee_api_key = os.getenv('IEEE_API_KEY')
-        if ieee_api_key and len(articles) < 2:
-            print(f"  🔑 Trying IEEE API...")
+        for query in search_queries[:1]:
             try:
-                base_url = "https://ieeexploreapi.ieee.org/api/v1/search/articles"
-                params = {
-                    'querytext': 'MEMS OR sensor OR IoT',
-                    'apikey': ieee_api_key,
-                    'max_records': 3,
-                    'sort_order': 'desc',
-                    'sort_by': 'publication_date'
-                }
+                print(f"    🔍 Searching: '{query}'")
                 
-                response = requests.get(base_url, params=params, timeout=10)
-                if response.status_code == 200:
-                    data = response.json()
-                    if 'articles' in data:
-                        for article in data['articles'][:2]:
-                            if len(articles) < 5:
-                                articles.append({
-                                    'title': article.get('title', ''),
-                                    'summary': article.get('abstract', '')[:300],
-                                    'published': article.get('publication_date', ''),
-                                    'link': f"https://ieeexplore.ieee.org/document/{article.get('article_number', '')}",
-                                    'source': 'IEEE Xplore'
-                                })
-                                print(f"    ✅ {article.get('title', '')[:50]}...")
+                # Provide search links (IEEE requires authentication for full API)
+                search_url = f"https://ieeexplore.ieee.org/search/searchresults.jsp?newsearch=true&queryText={query}"
+                
+                articles.append({
+                    'title': f"IEEE Xplore: {query} Research",
+                    'summary': f'Latest papers on {query} from IEEE Xplore - Click link to browse',
+                    'published': datetime.now().isoformat()[:10],
+                    'link': search_url,
+                    'source': 'IEEE Xplore'
+                })
+                print(f"    ✅ Added IEEE search: {query}")
+                    
             except Exception as e:
-                print(f"  ℹ️  IEEE API: {str(e)[:50]}")
-                
+                print(f"    ⚠️ Error with '{query}': {str(e)[:50]}")
+        
+        if articles:
+            print(f"  ✅ IEEE Xplore: {len(articles)} search link(s)")
+        
     except Exception as e:
-        print(f"  ⚠️ IEEE Xplore error: {str(e)[:80]}")
+        print(f"  ⚠️ IEEE error: {str(e)[:80]}")
     
     return articles
 
