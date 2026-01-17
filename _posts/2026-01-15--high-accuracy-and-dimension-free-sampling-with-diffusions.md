@@ -1,6 +1,6 @@
 ---
 title: '📖 High-accuracy and dimension-free sampling with diffusions'
-date: 2026-01-15T21:24:24.431460
+date: 2026-01-15T21:34:34.486651
 permalink: /posts/2026-01-15--high-accuracy-and-dimension-free-sampling-with-diffusions/
 categories:
   - Research
@@ -36,5 +36,5 @@ This paper relates to current advances in:
 [View on arXiv](https://arxiv.org/abs/2601.10708v1)
 
 ---
-*Auto-posted from arXiv latest research. 2026-01-16 21:24 UTC*
+*Auto-posted from arXiv latest research. 2026-01-16 21:34 UTC*
 
