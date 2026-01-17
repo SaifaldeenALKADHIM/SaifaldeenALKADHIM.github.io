@@ -15,15 +15,21 @@ import re
 # Research topics related to Saifaldeen's work
 RESEARCH_TOPICS = [
     "AI sensors",
-    "MEMS ionization sensor",
-    "IoT systems AI",
-    "carbon nanotube sensors",
-    "machine learning edge computing",
-    "neural networks embedded systems",
-    "AI hardware acceleration",
-    "nanomaterial sensors",
-    "smart sensors",
-    "AI-driven IoT"
+    "MEMS",
+    "IoT",
+    "machine learning",
+    "neural network",
+    "AI",
+    "sensor",
+    "embedded",
+    "hardware",
+    "smart",
+    "nanomaterial",
+    "carbon nanotube",
+    "edge computing",
+    "microelectromechanical",
+    "semiconductor",
+    "wireless"
 ]
 
 # RSS Feeds for research news
@@ -108,24 +114,35 @@ def fetch_rss_news(max_items=10):
     for feed_url in RSS_FEEDS:
         try:
             feed = feedparser.parse(feed_url)
+            feed_title = feed.feed.get('title', 'Research Feed')
+            print(f"  📡 {feed_title}: {len(feed.entries)} articles")
+            
             for entry in feed.entries[:max_items]:
                 title = entry.get('title', 'No title')
                 summary = entry.get('summary', '')
                 published = entry.get('published', datetime.now().isoformat())
                 link = entry.get('link', '')
                 
-                # Check if relevant to research
+                # Check if relevant to research - broader filtering
                 full_text = (title + " " + summary).lower()
-                if any(topic.lower() in full_text for topic in RESEARCH_TOPICS):
+                
+                # Include all AI/tech research, not just exact matches
+                is_relevant = any(topic.lower() in full_text for topic in RESEARCH_TOPICS)
+                
+                # Also include any Nature/IEEE paper as it's high quality
+                is_quality_source = 'nature' in feed_title.lower() or 'ieee' in feed_title.lower()
+                
+                if is_relevant or is_quality_source:
                     articles.append({
                         'title': title,
                         'summary': summary[:500],
                         'published': published,
                         'link': link,
-                        'source': feed.feed.get('title', 'Research Feed')
+                        'source': feed_title
                     })
+                    print(f"    ✅ {title[:50]}...")
         except Exception as e:
-            print(f"Error fetching RSS feed {feed_url}: {e}")
+            print(f"  ⚠️ Error fetching {feed_url}: {str(e)[:60]}")
     
     return articles
 
@@ -138,30 +155,41 @@ def fetch_ieee_xplore(max_results=5):
     try:
         # Try IEEE Xplore RSS feed first (most reliable)
         print(f"  📡 Fetching IEEE Xplore RSS feed...")
-        ieee_rss = "https://ieeexplore.ieee.org/rss/I_TOC_new.XML"
         
-        feed = feedparser.parse(ieee_rss)
+        # Try multiple IEEE RSS endpoints
+        ieee_rss_urls = [
+            "https://ieeexplore.ieee.org/rss/I_TOC_new.XML",
+            "https://ieeexplore.ieee.org/rss/I_TOC.XML",
+        ]
+        
+        for ieee_rss in ieee_rss_urls:
+            feed = feedparser.parse(ieee_rss)
+            if feed.entries:
+                break
+        
+        print(f"    📊 Found {len(feed.entries)} articles")
+        
         if feed.entries:
-            for entry in feed.entries[:3]:
+            for entry in feed.entries[:5]:
                 title = entry.get('title', '')
-                summary = entry.get('summary', '')
+                summary = entry.get('summary', '')[:200]
                 published = entry.get('published', datetime.now().isoformat())
                 link = entry.get('link', '')
                 
-                # Filter for relevant topics
-                full_text = (title + " " + summary).lower()
-                if any(topic.lower() in full_text for topic in RESEARCH_TOPICS):
+                if title:  # Accept all IEEE papers regardless of topic match
                     articles.append({
                         'title': title,
-                        'summary': summary[:300],
+                        'summary': summary,
                         'published': published[:10] if len(published) >= 10 else published,
                         'link': link,
                         'source': 'IEEE Xplore'
                     })
-                    print(f"    ✅ Found: {title[:50]}...")
+                    print(f"    ✅ {title[:50]}...")
+        else:
+            print(f"    ℹ️  No articles in IEEE RSS feed")
         
         if not articles:
-            print(f"  ℹ️  No relevant IEEE papers found in RSS")
+            print(f"  ℹ️  No IEEE papers found in RSS")
             
         # Optional: Try API if available
         ieee_api_key = os.getenv('IEEE_API_KEY')
@@ -170,7 +198,7 @@ def fetch_ieee_xplore(max_results=5):
             try:
                 base_url = "https://ieeexploreapi.ieee.org/api/v1/search/articles"
                 params = {
-                    'querytext': 'MEMS OR "machine learning" IoT',
+                    'querytext': 'MEMS OR sensor OR IoT',
                     'apikey': ieee_api_key,
                     'max_records': 3,
                     'sort_order': 'desc',
@@ -190,8 +218,9 @@ def fetch_ieee_xplore(max_results=5):
                                     'link': f"https://ieeexplore.ieee.org/document/{article.get('article_number', '')}",
                                     'source': 'IEEE Xplore'
                                 })
+                                print(f"    ✅ {article.get('title', '')[:50]}...")
             except Exception as e:
-                print(f"  ℹ️  IEEE API unavailable: {str(e)[:50]}")
+                print(f"  ℹ️  IEEE API: {str(e)[:50]}")
                 
     except Exception as e:
         print(f"  ⚠️ IEEE Xplore error: {str(e)[:80]}")
