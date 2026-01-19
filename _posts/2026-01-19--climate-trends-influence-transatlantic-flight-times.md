@@ -1,6 +1,6 @@
 ---
 title: '🌿 Climate trends influence transatlantic flight times'
-date: 2026-01-19T14:59:59.367378
+date: 2026-01-19T15:55:28.684788
 permalink: /posts/2026-01-19--climate-trends-influence-transatlantic-flight-times/
 categories:
   - Research
