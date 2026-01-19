@@ -1,6 +1,6 @@
 ---
 title: '🌿 Hierarchical mechanisms control the clearance of DNA lesion–'
-date: 2026-01-19T15:55:28.707627
+date: 2026-01-19T16:29:51.361750
 permalink: /posts/2026-01-19--hierarchical-mechanisms-control-the-clearance-of-dna-lesion/
 categories:
   - Research

@@ -1,6 +1,6 @@
 ---
 title: '🌿 HPV vaccine could help to protect the unvaccinated against c'
-date: 2026-01-19T15:55:28.659770
+date: 2026-01-19T16:29:51.299732
 permalink: /posts/2026-01-19--hpv-vaccine-could-help-to-protect-the-unvaccinated-against-/
 categories:
   - Research
