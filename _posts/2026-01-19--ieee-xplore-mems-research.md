@@ -1,7 +1,7 @@
 ---
 title: '⚡ IEEE Xplore: MEMS Research'
-date: 2026-01-19T10:12:57.655480
-permalink: /posts/2026-01-19--ieee-xplore-mems-research/
+date: 2026-01-19T10:14:55.230576
+permalink: /posts/2026-01-19/-ieee-xplore-mems-research/
 categories:
   - Research
 tags:
