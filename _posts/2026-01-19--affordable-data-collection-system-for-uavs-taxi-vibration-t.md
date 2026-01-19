@@ -1,6 +1,6 @@
 ---
 title: '📖 Affordable Data Collection System for UAVs Taxi Vibration Testing'
-date: 2026-01-19T10:12:46.140632
+date: 2026-01-19
 permalink: /posts/2026-01-19--affordable-data-collection-system-for-uavs-taxi-vibration-t/
 categories:
   - Research
@@ -37,4 +37,5 @@ This paper relates to current advances in:
 
 ---
 *Auto-posted from arXiv latest research. 2026-01-19 10:12 UTC*
+
 

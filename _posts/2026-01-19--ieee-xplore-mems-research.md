@@ -1,6 +1,6 @@
 ---
 title: '⚡ IEEE Xplore: MEMS Research'
-date: 2026-01-19T16:29:51.389447
+date: 2026-01-19
 permalink: /posts/2026-01-19--ieee-xplore-mems-research/
 categories:
   - Research
@@ -19,4 +19,5 @@ excerpt: 'Latest research on AI, MEMS sensors, IoT systems, and emerging technol
 Latest papers on MEMS from IEEE Xplore - Click link to browse...
 
 [Read Full Article](https://ieeexplore.ieee.org/search/searchresults.jsp?newsearch=true&queryText=MEMS)
+
 

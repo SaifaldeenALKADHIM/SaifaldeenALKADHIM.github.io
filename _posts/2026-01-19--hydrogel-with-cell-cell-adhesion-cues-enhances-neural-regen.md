@@ -1,6 +1,6 @@
 ---
 title: '🌿 Hydrogel with cell-cell adhesion cues enhances neural regene'
-date: 2026-01-19T11:17:35.782599
+date: 2026-01-19
 permalink: /posts/2026-01-19--hydrogel-with-cell-cell-adhesion-cues-enhances-neural-regen/
 categories:
   - Research
@@ -19,4 +19,5 @@ excerpt: 'Latest research on AI, MEMS sensors, IoT systems, and emerging technol
 <p>Nature Communications, Published online: 19 January 2026; <a href="https://www.nature.com/articles/s41467-026-68632-9">doi:10.1038/s41467-026-68632-9</a></p>Cell-cell adhesion plays critical roles in maintaining and regulating cellular functions. Here, authors present a diffusive N-cadherin funct...
 
 [Read Full Article](https://www.nature.com/articles/s41467-026-68632-9)
+
 

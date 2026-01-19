@@ -1,6 +1,6 @@
 ---
 title: '📖 Accurate laboratory testing of low-frequency triaxial vibration sensor'
-date: 2026-01-19T10:08:49.506752
+date: 2026-01-19
 permalink: /posts/2026-01-19--accurate-laboratory-testing-of-low-frequency-triaxial-vibra/
 categories:
   - Research
@@ -37,4 +37,5 @@ This paper relates to current advances in:
 
 ---
 *Auto-posted from arXiv latest research. 2026-01-19 10:08 UTC*
+
 

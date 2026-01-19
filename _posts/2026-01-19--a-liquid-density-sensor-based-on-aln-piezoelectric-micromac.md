@@ -1,6 +1,6 @@
 ---
 title: '📖 A Liquid Density Sensor Based On AlN Piezoelectric Micromachined Ultra'
-date: 2026-01-19T10:12:46.172660
+date: 2026-01-19
 permalink: /posts/2026-01-19--a-liquid-density-sensor-based-on-aln-piezoelectric-micromac/
 categories:
   - Research
@@ -37,4 +37,5 @@ This paper relates to current advances in:
 
 ---
 *Auto-posted from arXiv latest research. 2026-01-19 10:12 UTC*
+
 
