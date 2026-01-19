@@ -1,241 +1,337 @@
 # Copilot Instructions for Academic Portfolio Website
 
 ## Project Overview
-Personal academic portfolio built with **Jekyll + Minimal Mistakes theme**, auto-deployed via **GitHub Pages** (`master` branch). Showcases publications, conference talks, teaching materials, projects, and blog posts.
+Personal academic portfolio built with **Jekyll + Minimal Mistakes theme**, auto-deployed via **GitHub Pages** (`master` branch). Showcases publications, conference talks, teaching materials, projects, and blog posts for MEMS/IoT research.
 
-**Tech Stack:** Jekyll (github-pages gem), Ruby/Bundler, Node.js/npm, Python (content generators)  
+**Tech Stack:** Jekyll (github-pages gem), Ruby/Bundler, Node.js/npm, Python (content generators & automation)  
 **Live Site:** `https://SaifaldeenALKADHIM.github.io`
 
 ---
 
 ## Architecture Overview
 
-### Directory Structure
+### Core Directory Structure
 ```
-├── _config.yml              # Main site configuration
-├── _config.dev.yml          # Development overrides
-├── _data/                   # Data files (navigation, UI text)
-├── _includes/               # Reusable HTML partials
-├── _layouts/                # Page templates
+├── _config.yml              # Main site configuration (author, collections, defaults)
+├── _config.dev.yml          # Dev overrides (use with --config flag)
+├── _data/navigation.yml     # Top menu links
+├── _includes/               # HTML partials (analytics, sidebar, etc.)
+├── _layouts/                # Page templates (single, talk, archive)
 ├── _sass/                   # SASS stylesheets
 ├── _pages/                  # Static pages (About, CV, etc.)
-├── _publications/           # Research papers (collection)
-├── _talks/                  # Conference talks (collection)
-├── _teaching/               # Teaching materials (collection)
-├── _portfolio/              # Project showcases (collection)
-├── _posts/                  # Blog posts (YYYY-MM-DD-*.md)
-├── _drafts/                 # Unpublished posts
-├── markdown_generator/      # Python/TSV bulk content tools
+├── _publications/           # Research papers (YYYY-MM-DD-slug.md)
+├── _talks/                  # Conference talks (YYYY-MM-DD-slug.md)
+├── _teaching/               # Teaching materials
+├── _portfolio/              # Project showcases
+├── _posts/                  # Blog posts (YYYY-MM-DD-*.md) - FLAT structure
+├── _drafts/                 # Unpublished posts (no date prefix)
+├── .github/
+│   ├── workflows/           # auto-post-research-news.yml
+│   └── scripts/             # fetch_research_news.py
+├── markdown_generator/      # Python TSV→Markdown converters
+│   ├── publications.py      # TSV to _publications/*.md
+│   ├── talks.py             # TSV to _talks/*.md
+│   └── *.tsv                # Bulk import data
 ├── images/                  # Image assets
-├── files/                   # Downloadable files
-└── assets/js/               # JavaScript (built to main.min.js)
+├── files/                   # Downloadable PDFs, etc.
+└── assets/js/               # JS source (builds to main.min.js)
 ```
 
-### Jekyll Collections
-Collections organize academic content with structured frontmatter:
+### Jekyll Collections (Academic Content Organization)
+All collections use **date-prefixed filenames** (`YYYY-MM-DD-slug.md`) and structured frontmatter:
 
-**Publications** (`_publications/*.md`):
+**Publications** (`_publications/2025-01-19-ionization-sensor.md`):
 ```yaml
 title: "Paper Title"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
-date: 2009-10-01
-venue: 'Journal/Conference Name'
-paperurl: 'http://link-to-paper.pdf'
-citation: 'Author. (Year). "Title." <i>Venue</i>.'
-excerpt: 'Brief description'
+permalink: /publication/2025-01-19-paper-slug
+date: 2025-01-19
+venue: 'Sensors and Actuators A: Physical'
+paperurl: 'https://doi.org/10.1016/...'
+citation: 'Alkadhim, S. et al. (2025). "Title." <i>Journal</i>.'
+excerpt: 'Brief description for listing pages'
 ```
 
-**Talks** (`_talks/*.md`):
+**Talks** (`_talks/2024-06-15-conference-talk.md`):
 ```yaml
 title: "Talk Title"
 collection: talks
-type: "Conference/Tutorial"
-permalink: /talks/2017-04-05-tutorial-1
-venue: "Conference Name"
-date: 2017-04-05
-location: "City, Country"
+type: "Conference/Tutorial/Invited"
+permalink: /talks/2024-06-15-talk-slug
+venue: "IEEE Conference Name"
+date: 2024-06-15
+location: "Budapest, Hungary"
 ```
 
-**Posts** (`_posts/YYYY-MM-DD-*.md`):
+**Posts** (`_posts/2026-01-19-research-topic.md`):
+- **Critical:** Posts MUST be in flat `_posts/` directory (no subdirectories)
+- Jekyll ignores posts in nested folders like `_posts/2026/`
+- Use tags/categories for organization, NOT folder structure
 ```yaml
 title: 'Post Title'
-date: 2022-02-02
-permalink: /posts/2022-02-02-post/
+date: 2026-01-19
+permalink: /posts/2026-01-19-post-slug/
 tags:
-  - Tag1
-  - Tag2
+  - AI
+  - MEMS
+  - IoT
 ```
 
-### Configuration Hierarchy
-- **`_config.yml`**: Author profile, site metadata, collection settings, analytics, theme defaults
-- **`_config.dev.yml`**: Development-only overrides (merged with `--config _config.yml,_config.dev.yml`)
-- **`_data/navigation.yml`**: Top navigation menu links
-- **Layout defaults**: Defined in `_config.yml` under `defaults:` (avoid repeating in individual files)
+### Configuration Hierarchy & Defaults
+**`_config.yml` (lines 160-200)** defines layout defaults for all collections:
+```yaml
+defaults:
+  - scope: {path: "", type: posts}
+    values: {layout: single, author_profile: true, read_time: true, comments: true, share: true}
+  - scope: {path: "", type: publications}
+    values: {layout: single, author_profile: true, share: true, comments: true}
+  - scope: {path: "", type: talks}
+    values: {layout: talk, author_profile: true, share: true}
+```
+**Never duplicate these in individual .md files** - inheritance is automatic.
+
+**`_data/navigation.yml`**: Defines main menu links (About, Research, Blog, Teaching, Talks, Portfolio, CV).
 
 ---
 
 ## Development Workflow
 
-### Local Development Setup
+### Local Development Commands
 ```bash
 # First-time setup
-bundle install              # Install Ruby dependencies
-npm install                 # Install Node.js dependencies
+bundle install              # Ruby gems (Jekyll, github-pages)
+npm install                 # Node.js tools (uglify-js, onchange)
 
-# Start development server
-bundle exec jekyll serve    # http://localhost:4000
+# Standard development server
+bundle exec jekyll serve    # http://localhost:4000, auto-rebuild
 
-# Development mode (shows drafts, uses _config.dev.yml)
+# Development mode (show drafts, use dev config)
 bundle exec jekyll serve --config _config.yml,_config.dev.yml --drafts
+
+# Live reload (requires hawkins gem)
+bundle exec jekyll serve --livereload
 ```
 
-**Critical:** Always use `bundle exec jekyll serve` (never bare `jekyll serve`) to match GitHub Pages gem versions.
-
-**Auto-rebuild:** Content changes reload automatically, but `_config.yml` edits require server restart.
+**Critical Rules:**
+- Always use `bundle exec jekyll serve` (never bare `jekyll serve`)
+- Restart server after editing `_config.yml` (config changes not auto-reloaded)
+- Content/layout changes rebuild automatically
+- Posts in nested folders won't appear (Jekyll bug) - keep flat `_posts/`
 
 ### JavaScript Build Process
 ```bash
-npm run build:js            # Uglify & concatenate to assets/js/main.min.js
-npm run watch:js            # Watch mode for active development
+npm run build:js            # Uglify & concat → assets/js/main.min.js
+npm run watch:js            # Watch mode for active JS development
 ```
+Bundles: jQuery, fitvids, greedy-navigation, magnific-popup, smooth-scroll, stickyfill.
 
-Built file includes: jQuery, fitvids, greedy-navigation, magnific-popup, smooth-scroll, stickyfill.
+### Python Environment (Optional)
+If using markdown generators or automation scripts:
+```bash
+# Using virtual environment
+python -m venv .venv
+.venv\Scripts\Activate.ps1  # Windows
+source .venv/bin/activate    # Unix
+pip install pandas feedparser requests python-dateutil geopy getorg
+```
 
 ---
 
-## Content Management
+## Content Management Workflows
 
-### Bulk Content Generation (Preferred Method)
-Use Python scripts in `markdown_generator/` for publications/talks at scale:
+### Bulk Publications/Talks Import (Preferred)
+Use Python TSV converters in `markdown_generator/` for batch imports:
 
 **1. Edit TSV files:**
-- `markdown_generator/publications.tsv`: pub_date, title, venue, excerpt, citation, url_slug, paper_url
-- `markdown_generator/talks.tsv`: date, title, type, location, venue, url_slug
+- `publications.tsv`: pub_date, title, venue, excerpt, citation, url_slug, paper_url
+- `talks.tsv`: date, title, type, location, venue, url_slug
 
 **2. Generate Markdown:**
 ```bash
-python markdown_generator/publications.py  # → _publications/YYYY-MM-DD-*.md
-python markdown_generator/talks.py         # → _talks/YYYY-MM-DD-*.md
+cd markdown_generator
+python publications.py      # → ../_publications/YYYY-MM-DD-*.md
+python talks.py             # → ../_talks/YYYY-MM-DD-*.md
 ```
 
-**Requirements:** pandas, geopy, getorg
+**3. Verify & Commit:**
+Check generated files have proper frontmatter, then `git add` and commit.
+
+**Script Details:**
+- `publications.py` (109 lines): Reads TSV, escapes YAML special chars (`&`, `"`, `'`), writes markdown with metadata + download links
+- Uses pandas for TSV parsing
+- HTML-escapes venues/citations to prevent YAML breakage
 
 ### Manual Content Creation
-Copy existing files as templates, update frontmatter. File naming convention:
-- **Publications/Talks:** `YYYY-MM-DD-url-slug.md` (date-prefixed, matches permalink)
-- **Posts:** `YYYY-MM-DD-title-slug.md` (Jekyll standard)
-- **Pages:** `name.md` (no date prefix)
+Copy existing file as template:
+```bash
+# Publications/Talks (date-prefixed)
+cp _publications/2025-01-19-example.md _publications/2026-02-01-new-paper.md
 
-### Geographic Talk Visualization
-Generate interactive map from talk locations:
+# Blog posts (must be flat in _posts/)
+cp _posts/2026-01-19-example.md _posts/2026-02-15-new-post.md
+
+# Pages (no date prefix)
+cp _pages/about.md _pages/new-page.md
+```
+Update frontmatter `title`, `date`, `permalink`, `url_slug` to match new filename.
+
+### Automated Blog Posting (Research News Agent)
+GitHub Actions workflow `.github/workflows/auto-post-research-news.yml`:
+- **Schedule:** Monday & Thursday at 9 AM UTC (`cron: '0 9 * * 1,4'`)
+- **Script:** `.github/scripts/fetch_research_news.py` (430 lines)
+- **Sources:** arXiv feeds (AI, ML, Systems), Nature, IEEE Xplore
+- **Topics:** AI sensors, MEMS, IoT, carbon nanotubes, edge computing, semiconductors
+- **Output:** Creates blog posts in `_posts/` with YAML frontmatter + content
+- **Deduplication:** Checks existing posts to prevent duplicates
+- **Auto-commit:** Pushes to `master` if new posts generated
+
+**Manual Trigger:** Run from GitHub Actions tab → "Auto-Post Research News" → "Run workflow"
+
+### Geographic Talk Map Generation
 ```bash
 cd _talks
 python ../talkmap.py        # → ../talkmap/index.html
 ```
-Geocodes `location:` fields from talk frontmatter using Nominatim.
+- Geocodes `location:` fields from talk frontmatter using Nominatim
+- Generates interactive map of conference/talk locations
+- Requires: geopy, getorg
 
 ---
 
 ## Site Configuration
 
-### Author Profile Management
-Edit `author:` section in `_config.yml`:
+### Author Profile (`_config.yml` lines 46-89)
 ```yaml
 author:
-  name: "Full Name"
-  avatar: "profile.png"           # From images/ directory
-  bio: "Short bio text"
-  location: "City, Country"
-  email: "email@example.com"
-  googlescholar: "https://..."
-  researchgate: "https://..."
-  # ... other social links
+  name: "Saif Aldeen Saad Obayes Al-Kadhim, Ph.D."
+  avatar: "profile.png"     # → images/profile.png
+  bio: "Assistant Professor | IEEE Senior Member | MEMS & IoT Expert"
+  location: "Budapest, Hungary"
+  email: "saifaldeen.saad@ieee.org"
+  googlescholar: "https://scholar.google.com/citations?user=..."
+  researchgate: "https://www.researchgate.net/profile/..."
+  linkedin: "saif-aldeen-al-kadhim-96230561"
+  orcid: "http://orcid.org/0000-0002-2082-9591"
+  github: "SaifaldeenALKADHIM"
+  twitter: "saifoony"
 ```
-Changes appear in sidebar across all pages.
+Profile appears in sidebar on all pages. Update `avatar` filename if changing profile image.
 
-### Navigation Menu
-Edit `_data/navigation.yml`:
+### Navigation Menu (`_data/navigation.yml`)
 ```yaml
 main:
-  - title: "Publications"
+  - title: "About"
+    url: /
+  - title: "Research"
     url: /publications/
-  - title: "Custom Page"
-    url: /custom-page/
+  - title: "Blog"
+    url: /year-archive/
 ```
+Order matters - appears left-to-right in top menu.
 
-### Analytics & SEO
-In `_config.yml`:
+### SEO & Analytics (`_config.yml` lines 16-43)
 ```yaml
-google_site_verification: "verification-code"
+google_site_verification: "4TZ5HtV-5XZR7qxoxfJIXeBg3ymdmPytFzH08pHKKI0"
 analytics:
   provider: "google-universal"
   google:
     tracking_id: "UA-XXXXXXXX"
+twitter:
+  username: "saifoony"
+og_image: # Open Graph image for social sharing
 ```
-
-### Collection Defaults
-Defined in `_config.yml` under `defaults:` - **DO NOT repeat** in individual files:
-- **Publications:** `layout: single`, `author_profile: true`, `share: true`, `comments: true`
-- **Talks:** `layout: talk`, `author_profile: true`, `share: true`
-- **Posts:** `layout: single`, `read_time: true`, `related: true`
 
 ---
 
-## File Conventions
+## File Conventions & Critical Rules
+
+### Blog Post Structure (CRITICAL)
+**DO:**
+- Place posts directly in `_posts/` (flat structure)
+- Name: `YYYY-MM-DD-descriptive-slug.md`
+- Use tags for categorization, not folders
+
+**DON'T:**
+- Create subdirectories like `_posts/2026/` (Jekyll ignores nested posts)
+- Use categories in folder structure (breaks Jekyll build)
 
 ### Permalinks
-- **Collections:** `/:collection/:path/` (path = filename without extension)
-- **Posts:** `/:categories/:title/`
-- **Override:** Set explicit `permalink:` in frontmatter
+- **Collections:** `/:collection/:path/` (path = filename without `.md`)
+- **Posts:** `/:categories/:title/` or explicit `permalink:` in frontmatter
+- **Slug Rule:** Filename slug MUST match permalink slug for predictable URLs
 
 ### Images & Assets
 ```markdown
-![Alt text](/images/filename.png)      # Store in /images/ or /files/
+![Alt text](/images/filename.png)      # Absolute path from site root
+[Download PDF](/files/paper.pdf)       # Files directory for downloads
 ```
-Profile picture: `author.avatar` in `_config.yml` → `images/profile.png`
+- Profile picture: `images/profile.png` (referenced in `_config.yml`)
+- No need for `{{ site.baseurl }}` - GitHub Pages handles this
 
-### Draft Posts
-Place in `_drafts/` (no date prefix). View locally: `bundle exec jekyll serve --drafts`
+### Drafts
+- Place in `_drafts/` with no date prefix: `draft-post-title.md`
+- View locally: `bundle exec jekyll serve --drafts`
+- Publish: Move to `_posts/` and add date prefix
 
 ---
 
-## Deployment & Dependencies
+## Deployment & CI/CD
 
 ### Automatic Deployment
 - **Trigger:** Push to `master` branch
-- **Platform:** GitHub Pages (builds Jekyll automatically)
-- **No action required:** Site rebuilds on commit
+- **Platform:** GitHub Pages (auto-builds Jekyll)
+- **Build Time:** ~1-2 minutes after push
+- **Check Build:** Repo Settings → Pages → Build log
 
-### Dependencies
-- **Jekyll:** Controlled by `github-pages` gem (DO NOT specify separate Jekyll version)
-- **Theme:** Minimal Mistakes (integrated via theme framework)
-- **Jekyll Plugins:** jekyll-feed, jekyll-sitemap, hawkins (live reload), jekyll-redirect-from
-- **Python Tools:** pandas (TSV processing), geopy/getorg (geocoding)
-- **Node.js:** uglify-js, onchange (JS minification/watching)
+### GitHub Actions Workflows
+1. **auto-post-research-news.yml**: Bi-weekly research news automation (see above)
+2. **Future workflows**: Add to `.github/workflows/` (must have proper permissions)
 
-### Allowed Jekyll Plugins
-Only plugins in `github-pages` gem whitelist work in production. Check whitelist before adding new plugins.
+### Dependencies Management
+**Ruby (Gemfile):**
+- `github-pages` gem (locks Jekyll/plugin versions)
+- Never specify Jekyll version separately (conflicts with github-pages)
+- Plugins: jekyll-feed, jekyll-sitemap, hawkins (livereload), jekyll-redirect-from
+
+**Node.js (package.json):**
+- uglify-js, onchange (JS build tools)
+- Minimal Mistakes theme v3.4.2
+
+**Python (requirements.txt if created):**
+- pandas (TSV processing)
+- feedparser, requests, python-dateutil (auto-post script)
+- geopy, getorg (geocoding for talkmap)
+
+**Jekyll Plugin Whitelist:**
+Only these plugins work on GitHub Pages: jekyll-paginate, jekyll-sitemap, jekyll-gist, jekyll-feed, jemoji, jekyll-redirect-from. Don't add unlisted plugins.
 
 ---
 
-## Troubleshooting
+## Troubleshooting Common Issues
 
-| Issue | Solution |
-|-------|----------|
-| Changes not appearing locally | Restart Jekyll server after `_config.yml` edits |
-| Build failure on GitHub | Check repo Settings → Pages for build log |
-| Plugin not working in production | Verify plugin is in github-pages gem whitelist |
-| Broken permalinks | Ensure frontmatter permalink matches filename pattern |
-| JavaScript changes ignored | Run `npm run build:js` to regenerate main.min.js |
-| Missing navigation items | Check `_data/navigation.yml` syntax and indentation |
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| Posts not appearing | Nested in `_posts/2026/` subdirectories | Move to flat `_posts/` structure |
+| Changes not showing locally | `_config.yml` edited | Restart Jekyll server (Ctrl+C, re-run `bundle exec jekyll serve`) |
+| Build fails on GitHub | Invalid YAML frontmatter | Check for unescaped special chars (`&`, `"`, `'`) in titles/citations |
+| Plugin not working in prod | Plugin not in whitelist | Check `_config.yml` whitelist, remove unlisted plugins |
+| JS changes ignored | Forgot to rebuild | Run `npm run build:js` to regenerate `main.min.js` |
+| Broken author profile | Wrong image path | Verify `images/profile.png` exists, check `author.avatar` in `_config.yml` |
+| Navigation menu missing | YAML syntax error | Validate `_data/navigation.yml` indentation |
+| Permalink 404 | Filename/permalink mismatch | Ensure `permalink:` matches `YYYY-MM-DD-slug` pattern |
 
 ---
 
 ## Project-Specific Notes
 
-### Nested Repository
-`SaifaldeenALKADHIM.github.io/` subdirectory is a duplicate nested repo - should be removed or clarified.
+### Custom Collections
+- **MATLAB**: `_MATLAB/` for MATLAB-related content (navigation item configured)
+- **Comsol**: `Comsol/` directory for COMSOL Multiphysics simulation files
 
-### MATLAB Section
-Custom collection for MATLAB-related content (see `_MATLAB/` and navigation item).
+### Research Focus Areas (for AI agents creating content)
+When generating posts/publications, relevant keywords:
+- MEMS ionization sensors, carbon nanotube sensors, aerosol detection
+- IoT systems, edge computing, smart sensors
+- Machine learning on embedded devices, neural networks for hardware
+- Battery safety monitoring, gas sensing technologies
+- IEEE standards (P2418.11), automotive applications
