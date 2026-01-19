@@ -1,0 +1,245 @@
+---
+# Custom CSS for improved styling
+---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* ========================================
+   CUSTOM THEME IMPROVEMENTS
+   ======================================== */
+
+/* Modern color scheme */
+:root {
+  --primary-color: #0066cc;
+  --secondary-color: #00aaff;
+  --accent-color: #ff6b35;
+  --text-dark: #2d3748;
+  --bg-light: #f7fafc;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced navigation bar */
+.masthead {
+  border-bottom: 3px solid var(--primary-color);
+  box-shadow: var(--shadow);
+  
+  .site-title {
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .greedy-nav {
+    a {
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: var(--accent-color);
+        transform: translateY(-2px);
+      }
+    }
+    
+    .visible-links a {
+      font-weight: 500;
+      padding: 0.75rem 1rem;
+    }
+  }
+}
+
+/* Better sidebar styling */
+.sidebar {
+  .author__avatar {
+    img {
+      border: 4px solid var(--primary-color);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .author__bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+  }
+  
+  .author__urls {
+    li a {
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: var(--accent-color);
+        padding-left: 0.75rem;
+      }
+    }
+  }
+}
+
+/* Publication cards */
+.archive__item {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-left-color: var(--accent-color);
+    background: var(--bg-light);
+    padding-left: 2rem;
+  }
+  
+  .archive__item-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    
+    a {
+      color: var(--text-dark);
+      
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+  
+  .archive__item-excerpt {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4a5568;
+  }
+}
+
+/* Blog post styling */
+.page__content {
+  h1, h2, h3, h4 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+  }
+  
+  p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: var(--accent-color);
+      text-decoration-color: var(--accent-color);
+    }
+  }
+  
+  code {
+    background: var(--bg-light);
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.9em;
+  }
+  
+  pre {
+    background: #1a202c;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    
+    code {
+      background: transparent;
+      border: none;
+      color: #e2e8f0;
+    }
+  }
+}
+
+/* Enhanced buttons */
+.btn {
+  background: var(--primary-color);
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  
+  &:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Footer styling */
+.page__footer {
+  border-top: 3px solid var(--primary-color);
+  background: var(--bg-light);
+  
+  .page__footer-copyright {
+    color: var(--text-dark);
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .masthead {
+    .greedy-nav .visible-links a {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .archive__item {
+    padding-left: 1rem;
+    
+    &:hover {
+      padding-left: 1.25rem;
+    }
+  }
+}
+
+/* Year archive enhancements */
+.taxonomy__section {
+  margin-bottom: 3rem;
+  
+  .archive__item-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tags/Categories styling */
+.page__taxonomy {
+  .sep {
+    display: none;
+  }
+  
+  a {
+    background: var(--bg-light);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 0.3rem 0.8rem;
+    margin: 0.25rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+}

@@ -23,10 +23,10 @@ Write-Host "3. Select scopes: repo, workflow, read:user, public_repo" -Foregroun
 Write-Host "4. Click 'Generate token'" -ForegroundColor White
 Write-Host ""
 
-$token = Read-Host "📝 Paste your new GitHub token (ghp_...)"
+$token = Read-Host "Paste your new GitHub token"
 
 if ($token -notmatch '^ghp_') {
-    Write-Host "❌ Invalid token format! Must start with 'ghp_'" -ForegroundColor Red
+    Write-Host "Invalid token! Must start with ghp_" -ForegroundColor Red
     exit 1
 }
 

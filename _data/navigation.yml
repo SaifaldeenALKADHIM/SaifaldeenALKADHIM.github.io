@@ -1,25 +1,30 @@
-# main links links
+# main links - Reorganized for better UX
 main:
-  - title: "Publications"
+  - title: "About"
+    url: /
+    
+  - title: "Research"
     url: /publications/
-
-  - title: "Talks"
-    url: /talks/    
-
+    
+  - title: "Blog"
+    url: /year-archive/
+    
   - title: "Teaching"
-    url: /teaching/    
+    url: /teaching/
+    
+  - title: "Talks"
+    url: /talks/
     
   - title: "Portfolio"
     url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
     
   - title: "CV"
     url: /cv/
-    
+
+# Resources submenu (can be expanded later)
+resources:
   - title: "MATLAB"
-    url: /MATLAB/  
+    url: /MATLAB/
     
-  - title: "COMSOL Multiphysics"
+  - title: "COMSOL"
     url: /Comsol/  

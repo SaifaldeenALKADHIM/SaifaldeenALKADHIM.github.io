@@ -54,6 +54,7 @@ def fetch_arxiv_papers(query, max_results=10):
     try:
         base_url = "http://export.arxiv.org/api/query?"
         papers = []
+        seen_arxiv_ids = set()  # Track papers we've already seen
         import xml.etree.ElementTree as ET
         
         # Search for papers with keywords related to research
@@ -87,6 +88,11 @@ def fetch_arxiv_papers(query, max_results=10):
                         published = published_elem.text[:10]
                         arxiv_id = id_elem.text.split('/abs/')[-1]
                         
+                        # Skip if we've already seen this paper in this run
+                        if arxiv_id in seen_arxiv_ids:
+                            continue
+                        seen_arxiv_ids.add(arxiv_id)
+                        
                         authors = []
                         for author in entry.findall('{http://www.w3.org/2005/Atom}author'):
                             name_elem = author.find('{http://www.w3.org/2005/Atom}name')
@@ -102,9 +108,7 @@ def fetch_arxiv_papers(query, max_results=10):
                             'url': f"https://arxiv.org/abs/{arxiv_id}"
                         }
                         
-                        # Avoid duplicates
-                        if not any(p['arxiv_id'] == arxiv_id for p in papers):
-                            papers.append(paper)
+                        papers.append(paper)
             except Exception as e:
                 print(f"  ⚠️ Error with query '{search_query}': {e}")
                 continue
@@ -130,16 +134,15 @@ def fetch_rss_news(max_items=10):
                 published = entry.get('published', datetime.now().isoformat())
                 link = entry.get('link', '')
                 
-                # Check if relevant to research - broader filtering
+                # Check if relevant to research - strict filtering for quality
                 full_text = (title + " " + summary).lower()
                 
-                # Include all AI/tech research, not just exact matches
+                # Must contain relevant research topics
                 is_relevant = any(topic.lower() in full_text for topic in RESEARCH_TOPICS)
                 
-                # Also include any Nature/IEEE paper as it's high quality
-                is_quality_source = 'nature' in feed_title.lower() or 'ieee' in feed_title.lower()
-                
-                if is_relevant or is_quality_source:
+                # For high-quality sources, require at least one research topic
+                # (don't auto-include all Nature/IEEE papers)
+                if is_relevant:
                     articles.append({
                         'title': title,
                         'summary': summary[:500],
@@ -200,29 +203,55 @@ def fetch_ieee_xplore(max_results=5):
     return articles
 
 
-def check_post_exists(title):
-    """Check if a post with this title already exists"""
+def check_post_exists(title, arxiv_id=None):
+    """Check if a post with this title or arXiv ID already exists"""
     posts_dir = Path("_posts")
     if not posts_dir.exists():
         return False
     
-    # Extract core title (remove emojis and extra text)
-    core_title = re.sub(r'[^a-z0-9\s]', '', title.lower())
-    core_title_short = ' '.join(core_title.split()[:5])  # First 5 words
+    # If arXiv ID provided, check for exact match first (most reliable)
+    if arxiv_id:
+        base_arxiv_id = arxiv_id.split('v')[0]  # Remove version suffix
+        for post_file in posts_dir.glob("*.md"):  # Only flat files
+            try:
+                with open(post_file, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                    # Check for exact arXiv ID match (with or without version)
+                    if base_arxiv_id in content:
+                        print(f"  ℹ️  Found existing post with arXiv ID: {base_arxiv_id}")
+                        return True
+            except:
+                pass
     
-    for post_file in posts_dir.glob("*.md"):
+    # Extract core title (remove emojis, special chars, and extra text)
+    core_title = re.sub(r'[^a-z0-9\s]', '', title.lower()).strip()
+    # Use first 15 words for strong matching
+    title_words = core_title.split()[:15]
+    core_title_key = ' '.join(title_words)
+    
+    if len(core_title_key) < 10:  # Skip very short titles
+        return False
+    
+    for post_file in posts_dir.glob("*.md"):  # Only flat files
         try:
             with open(post_file, 'r', encoding='utf-8') as f:
                 content = f.read().lower()
-                # Check if significant portion of title is already in posts
-                if core_title_short in content:
-                    return True
+                # Extract title from frontmatter
+                if 'title:' in content:
+                    title_line = [line for line in content.split('\n') if line.startswith('title:')]
+                    if title_line:
+                        file_title = re.sub(r'[^a-z0-9\s]', '', title_line[0].lower()).strip()
+                        # Compare first 15 words
+                        file_title_key = ' '.join(file_title.split()[:15])
+                        if core_title_key == file_title_key:
+                            print(f"  ℹ️  Found existing post: {post_file.name}")
+                            return True
         except:
             pass
     return False
 
 def create_blog_post(title, content, tags=None):
-    """Create a new blog post in Jekyll format"""
+    """Create a new blog post in Jekyll format (flat structure required by Jekyll)"""
     if tags is None:
         tags = ["AI", "Research", "MEMS", "Sensors", "IoT"]
     
@@ -231,23 +260,23 @@ def create_blog_post(title, content, tags=None):
         print(f"  ℹ️  Post with similar title exists. Skipping.")
         return False
     
-    # Use PAST date so Jekyll displays it immediately
+    # Use TODAY's date so new posts appear first (most recent)
     today = datetime.now()
-    past_date = today - timedelta(days=1)  # Yesterday's date ensures it's always in the past
-    date_str = past_date.strftime("%Y-%m-%d")
-    date_iso = past_date.isoformat()
+    date_str = today.strftime("%Y-%m-%d")
+    date_iso = today.isoformat()
     
     slug = re.sub(r'[^\w\s-]', '', title.lower())
     slug = re.sub(r'[-\s]+', '-', slug)[:60]
-    filename = f"_posts/{date_str}-{slug}.md"
     
-    # Check if filename already exists today
+    # Jekyll requires flat structure: _posts/YYYY-MM-DD-slug.md
     posts_dir = Path("_posts")
-    if posts_dir.exists():
-        existing = list(posts_dir.glob(f"{date_str}-*.md"))
-        if len(existing) > 15:  # Increased to 15 posts per day (for twice daily posting)
-            print(f"  ⚠️  Already created {len(existing)} posts today (limit reached).")
-            return False
+    filename = posts_dir / f"{date_str}-{slug}.md"
+    
+    # Check daily post limit
+    existing = list(posts_dir.glob(f"{date_str}-*.md"))
+    if len(existing) >= 10:  # Limit 10 posts per day
+        print(f"  ⚠️  Already created {len(existing)} posts today (limit reached).")
+        return False
     
     # Create post frontmatter with proper YAML formatting
     tags_yaml = "\n".join(f"  - {tag}" for tag in tags)
@@ -330,6 +359,11 @@ def main():
     for paper in papers[:5]:  # 5 posts per run
         title = f"📖 {paper['title'][:70]}"
         
+        # Check for duplicates using arXiv ID first
+        if check_post_exists(title, arxiv_id=paper['arxiv_id']):
+            print(f"  ℹ️  Paper already posted (arXiv: {paper['arxiv_id']}). Skipping.")
+            continue
+        
         authors_str = ', '.join(paper['authors'][:5]) if paper['authors'] else 'Unknown Authors'
         
         content = f"""**Authors:** {authors_str}
@@ -364,7 +398,32 @@ This paper relates to current advances in:
     print(f"\n✨ Auto-Post Summary")
     print(f"📝 Posts created: {posts_created}")
     print(f"⏰ Next run: Twice daily (Morning & Evening)")
-    print(f"🚀 Ready to commit and push!")
+    
+    # Auto-commit and push if posts were created
+    if posts_created > 0:
+        try:
+            import subprocess
+            
+            print(f"\n📤 Committing and pushing changes...")
+            
+            # Add all posts to git (including daily folders)
+            subprocess.run(["git", "add", "_posts/"], check=True, capture_output=True)
+            
+            # Commit with timestamp
+            commit_msg = f"Auto-post: {posts_created} research articles ({datetime.now().strftime('%Y-%m-%d %H:%M UTC')})"
+            subprocess.run(["git", "commit", "-m", commit_msg], check=True, capture_output=True)
+            
+            # Push to remote
+            subprocess.run(["git", "push"], check=True, capture_output=True)
+            
+            print(f"✅ Successfully committed and pushed!")
+            print(f"   Message: {commit_msg}")
+        except subprocess.CalledProcessError as e:
+            print(f"⚠️  Git error: {e}")
+        except Exception as e:
+            print(f"⚠️  Error during commit/push: {e}")
+    else:
+        print(f"ℹ️  No new posts created, skipping commit/push")
 
 if __name__ == "__main__":
     main()

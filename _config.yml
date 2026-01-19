@@ -12,6 +12,7 @@ name                     : "Saif aldeen Saad Obayes ALKADHIM"
 #description              : "[AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY](https://atu.edu.iq)"
 description              : "<a href='https://cnj.atu.edu.iq/'>DEPARTMENT OF LASER TECHNOLOGIES AND ELECTRO-OPTICS ENGINEERING</a> <a href='https://atu.edu.iq/'>AL-FURAT AL-AWSAT TECHNICAL UNIVERSITY</a>"
 repository               : "SaifaldeenALKADHIM.github.io"
+minimal_mistakes_skin    : "default"  # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 # SEO Related
 google_site_verification : "4TZ5HtV-5XZR7qxoxfJIXeBg3ymdmPytFzH08pHKKI0"
 bing_site_verification   :
