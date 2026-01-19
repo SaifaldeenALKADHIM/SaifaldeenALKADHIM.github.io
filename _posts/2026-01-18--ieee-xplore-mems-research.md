@@ -1,6 +1,6 @@
 ---
 title: '⚡ IEEE Xplore: MEMS Research'
-date: 2026-01-18T10:02:41.138766
+date: 2026-01-18T10:08:04.026979
 permalink: /posts/2026-01-18--ieee-xplore-mems-research/
 categories:
   - Research

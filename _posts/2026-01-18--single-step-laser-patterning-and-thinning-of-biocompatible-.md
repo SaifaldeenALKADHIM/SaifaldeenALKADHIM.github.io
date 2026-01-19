@@ -1,6 +1,6 @@
 ---
 title: '📖 Single-step laser patterning and thinning of biocompatible MEMS flow s'
-date: 2026-01-18T10:02:44.717762
+date: 2026-01-18T10:08:07.623160
 permalink: /posts/2026-01-18--single-step-laser-patterning-and-thinning-of-biocompatible-/
 categories:
   - Research
@@ -36,5 +36,5 @@ This paper relates to current advances in:
 [View on arXiv](https://arxiv.org/abs/2512.08128v1)
 
 ---
-*Auto-posted from arXiv latest research. 2026-01-19 10:02 UTC*
+*Auto-posted from arXiv latest research. 2026-01-19 10:08 UTC*
 
