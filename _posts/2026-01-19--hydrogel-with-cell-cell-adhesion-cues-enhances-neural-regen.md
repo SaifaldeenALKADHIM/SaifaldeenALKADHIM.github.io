@@ -1,7 +1,7 @@
 ---
 title: '🌿 Hydrogel with cell-cell adhesion cues enhances neural regene'
-date: 2026-01-19T10:14:55.204483
-permalink: /posts/2026-01-19/-hydrogel-with-cell-cell-adhesion-cues-enhances-neural-regen/
+date: 2026-01-19T11:17:35.782599
+permalink: /posts/2026-01-19--hydrogel-with-cell-cell-adhesion-cues-enhances-neural-regen/
 categories:
   - Research
 tags:
