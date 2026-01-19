@@ -272,12 +272,6 @@ def create_blog_post(title, content, tags=None):
     posts_dir = Path("_posts")
     filename = posts_dir / f"{date_str}-{slug}.md"
     
-    # Check daily post limit
-    existing = list(posts_dir.glob(f"{date_str}-*.md"))
-    if len(existing) >= 10:  # Limit 10 posts per day
-        print(f"  ⚠️  Already created {len(existing)} posts today (limit reached).")
-        return False
-    
     # Create post frontmatter with proper YAML formatting
     tags_yaml = "\n".join(f"  - {tag}" for tag in tags)
     
@@ -399,31 +393,49 @@ This paper relates to current advances in:
     print(f"📝 Posts created: {posts_created}")
     print(f"⏰ Next run: Twice daily (Morning & Evening)")
     
-    # Auto-commit and push if posts were created
-    if posts_created > 0:
-        try:
-            import subprocess
+    # Always commit and push changes (including updates and empty commits)
+    try:
+        import subprocess
+        
+        print(f"\n📤 Committing and pushing changes...")
+        
+        # Add all posts to git
+        subprocess.run(["git", "add", "_posts/"], check=True, capture_output=True)
+        
+        # Create commit message
+        if posts_created > 0:
+            commit_msg = f"✨ Auto-post: {posts_created} research articles ({datetime.now().strftime('%Y-%m-%d %H:%M UTC')})"
+        else:
+            commit_msg = f"🔄 Auto-post check: No new articles ({datetime.now().strftime('%Y-%m-%d %H:%M UTC')})"
+        
+        # Commit changes (will be no-op if nothing changed)
+        result = subprocess.run(["git", "commit", "-m", commit_msg], capture_output=True, text=True)
+        
+        # Check if commit was successful or skipped (nothing to commit)
+        if result.returncode == 0:
+            print(f"✅ Committed: {commit_msg}")
+        elif "nothing to commit" in result.stdout or "nothing to commit" in result.stderr:
+            print(f"ℹ️  No changes to commit (already up-to-date)")
+        else:
+            print(f"⚠️  Commit status: {result.stderr[:100]}")
+        
+        # Always attempt to push
+        print(f"📤 Pushing to GitHub...")
+        push_result = subprocess.run(["git", "push"], capture_output=True, text=True)
+        
+        if push_result.returncode == 0:
+            print(f"✅ Successfully pushed to GitHub!")
+            if posts_created > 0:
+                print(f"   📝 {posts_created} new articles published")
+            else:
+                print(f"   🔄 Workflow check completed")
+        else:
+            print(f"⚠️  Push result: {push_result.stderr[:100]}")
             
-            print(f"\n📤 Committing and pushing changes...")
-            
-            # Add all posts to git (including daily folders)
-            subprocess.run(["git", "add", "_posts/"], check=True, capture_output=True)
-            
-            # Commit with timestamp
-            commit_msg = f"Auto-post: {posts_created} research articles ({datetime.now().strftime('%Y-%m-%d %H:%M UTC')})"
-            subprocess.run(["git", "commit", "-m", commit_msg], check=True, capture_output=True)
-            
-            # Push to remote
-            subprocess.run(["git", "push"], check=True, capture_output=True)
-            
-            print(f"✅ Successfully committed and pushed!")
-            print(f"   Message: {commit_msg}")
-        except subprocess.CalledProcessError as e:
-            print(f"⚠️  Git error: {e}")
-        except Exception as e:
-            print(f"⚠️  Error during commit/push: {e}")
-    else:
-        print(f"ℹ️  No new posts created, skipping commit/push")
+    except subprocess.CalledProcessError as e:
+        print(f"⚠️  Git error: {e}")
+    except Exception as e:
+        print(f"⚠️  Error during commit/push: {e}")
 
 if __name__ == "__main__":
     main()
