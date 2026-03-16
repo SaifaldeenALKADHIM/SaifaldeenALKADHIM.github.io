@@ -14,7 +14,7 @@ I am an expert in sensor intelligent systems and the fabrication of CNT, Si Micr
 
 ### Education
 - **Ph.D. in Electrical Engineering**  
-  Xi’an Jiaotong University (2020–2025)
+  Xi’an Jiaotong University (2022–2026)
 - **M.Sc. in Electro-Mechanical Systems Engineering**  
   University of Technology (2015–2017)
 - **B.Sc. in Electrical Engineering**  
