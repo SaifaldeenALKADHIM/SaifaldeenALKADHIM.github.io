@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Jekyll Serve (Standard)",
+      "runtimeExecutable": "bundle",
+      "runtimeArgs": ["exec", "jekyll", "serve"],
+      "port": 4000
+    },
+    {
+      "name": "Jekyll Serve (Dev Config)",
+      "runtimeExecutable": "bundle",
+      "runtimeArgs": ["exec", "jekyll", "serve", "--config", "_config.yml,_config.dev.yml"],
+      "port": 4000
+    },
+    {
+      "name": "Jekyll LiveServe (Hawkins)",
+      "runtimeExecutable": "bundle",
+      "runtimeArgs": ["exec", "jekyll", "liveserve", "--config", "_config.yml,_config.dev.yml"],
+      "port": 4000
+    },
+    {
+      "name": "npm watch:js",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "watch:js"],
+      "port": null
+    }
+  ]
+}
