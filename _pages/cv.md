@@ -11,13 +11,13 @@ redirect_from:
 
 ## Education
 * **Ph.D., Electrical Engineering**
-  Xi'an Jiaotong University, Shaanxi, China (09/2021 – 03/2025)
-* **M.Sc., Electro-Mechanical System Engineering**
-  University of Technology, Baghdad, Iraq (09/2015 – 10/2016)
-* **Higher Diploma, Power System Technology**
-  Middle Technical University (MTU), Iraq (09/2009 – 03/2011)
+  Xi'an Jiaotong University, Shaanxi, China
+* **M.Sc., Electrical Engineering**
+  University of Technology, Baghdad, Iraq
+* **Higher Diploma Degree in Power System Engineering**
+  Middle Technical University (MTU), Iraq
 * **B.Sc., Electrical Engineering**
-  University of Babylon, Iraq (09/2002 – 07/2006)
+  University of Babylon, Iraq
 
 ## Work Experience
 * **Assistant Professor**
