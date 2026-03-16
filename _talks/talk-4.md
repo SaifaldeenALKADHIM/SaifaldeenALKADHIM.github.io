@@ -4,7 +4,7 @@ collection: talks
 type: "Talk"
 permalink: /_talks/talk-4
 venue: "School of Electrical Engineering of Zhejiang University"
-date: June 27 to July 1, 2024
+date: 2024-06-27
 location: "Yuquan Campus, Zhejiang University, Hangzhou, Zhejiang Province"
 ---
 
