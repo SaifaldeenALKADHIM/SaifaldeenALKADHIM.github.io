@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 ## Education
-* **Ph.D., Electrical Engineering** *(Awarded March 2025)*
+* **Ph.D., Electrical Engineering**
   Xi'an Jiaotong University, Shaanxi, China (09/2021 – 03/2025)
 * **M.Sc., Electro-Mechanical System Engineering**
   University of Technology, Baghdad, Iraq (09/2015 – 10/2016)
