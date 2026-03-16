@@ -10,34 +10,37 @@ redirect_from:
 {% include base_path %}
 
 ## Education
-* **Ph.D. Student, Electrical Engineering**  
-  Xi'an Jiaotong University, Shaanxi, China (09/2021 - 07/2025)
-* **MSEE, Electrical Engineering**  
-  University of Technology, Iraq (09/2015 - 06/2017)
-* **Higher Diploma Degree in Power System Engineering**  
-  MIDDLE TECHNICAL UNIVERSITY, Iraq (09/2009 – 12/2010)
-* **BSEE, Electrical Engineering**  
-  University of Babylon, Iraq (09/2002 - 07/2006)
+* **Ph.D., Electrical Engineering**
+  Xi'an Jiaotong University, Shaanxi, China
+* **M.Sc., Electrical Engineering**
+  University of Technology, Baghdad, Iraq
+* **Higher Diploma Degree in Power System Engineering**
+  Middle Technical University (MTU), Iraq
+* **B.Sc., Electrical Engineering**
+  University of Babylon, Iraq
 
 ## Work Experience
-* **Research Assistant**  
-  University of Technology (Fall 2015)  
-  Duties included: LAB Work  
-  Supervisor: Professor Farag Mahel
-* **Assistant Chief Engineer, Head of IT department**  
-  Shiite Endowment Diwan, Babylon, Iraq (12/2021 to Present)
-* **Project Manager Engineer of E-Government**  
-  Shiite Endowment Diwan, Baghdad, Iraq (12/2019 to 12/2021)
-* **Project Manager Engineer**  
-  Shiite Endowment Diwan, Babylon, Iraq (12/2017 to 12/2019)
-* **PCB Design Engineer**  
-  AL BADER ELECTRONIC INDUSTRIES, Babylon, Iraq (05/2017 to 12/2017)
-* **Senior Electrical Engineer**  
-  ABB, Iraq (12/2011 to 10/2015)
-* **Electrical Engineer Supervisor**  
-  MoE, Iraq (12/2008 to 12/2011)
-* **Electrical Engineer**  
-  Babylon Mayor's office, Babylon, Iraq (09/2006 to 12/2008)
+* **Assistant Professor**
+  Al-Furat Al-Awsat Technical University (ATU), Dept. of Laser & Electro-Optics Technologies, Najaf, Iraq (2025 – Present)
+* **Ph.D. Researcher (MEMS & Ionization Sensors)**
+  Xi'an Jiaotong University, Shaanxi, China (09/2021 – 03/2025)
+  Lead researcher on high-sensitivity MEMS ionization sensors for EV battery safety and industrial gas detection.
+* **Head of Department / Research Associate**
+  University of Technology, Baghdad, Iraq (2015 – 2020)
+  Led electromechanical engineering research with administrative responsibilities.
+* **Assistant Chief Engineer, Head of IT Department**
+  Shiite Endowment Diwan, Babylon, Iraq (12/2017 – 12/2021)
+* **Project Manager Engineer of E-Government**
+  Shiite Endowment Diwan, Baghdad, Iraq (12/2019 – 12/2021)
+* **Project Manager Engineer**
+  Shiite Endowment Diwan, Babylon, Iraq (12/2017 – 12/2019)
+* **IC / PCB Design Engineer**
+  Al Bader Electronic Industries, Babylon, Iraq (05/2012 – 10/2015)
+  Designed 50+ PCB layouts using Altium Designer and Eagle; achieved 15% production cost reduction.
+* **Electrical Engineer Supervisor**
+  Ministry of Electricity (MoE), Iraq (12/2008 – 12/2011)
+* **Electrical Engineer**
+  Babylon Mayor's Office, Babylon, Iraq (09/2006 – 12/2008)
 
 ## Skills
 - Crash Course on Python, Google Career Certificates, T948S7NA2X4Z
