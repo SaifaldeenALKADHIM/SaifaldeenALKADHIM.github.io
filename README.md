@@ -14,11 +14,13 @@ I am an expert in sensor intelligent systems and the fabrication of CNT, Si Micr
 
 ### Education
 - **Ph.D. in Electrical Engineering**  
-  Xi’an Jiaotong University (2022–2026)
-- **M.Sc. in Electro-Mechanical Systems Engineering**  
-  University of Technology (2015–2017)
+  Xi’an Jiaotong University
+- **M.Sc. in Electro-Mechanical Systems Engineering**
+  University of Technology.
+- **H.D. in Power Systems Engineering**  
+  Middle Technical University
 - **B.Sc. in Electrical Engineering**  
-  University of Babylon (2002–2006)
+  University of Babylon
 
 ### Professional Positions
 - **Vice Chair WG: IEEE P2418.11**  
@@ -42,7 +44,7 @@ I am an expert in sensor intelligent systems and the fabrication of CNT, Si Micr
 #### Language Skills
 - **English**: Fluent (B2)
 - **Arabic**: Native (C2)
-- **Chinese**: Basic (A2)
+- **Chinese**: Basic (A1)
 
 #### Soft Skills
 - Team leadership and collaboration
